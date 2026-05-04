@@ -23,6 +23,141 @@ real-time resonance tracking.
 - `reports/` - synthesis, timing, utilization, and simulation outputs
 - `docs/` - report notes and project documentation
 
+## Current Results Snapshot
+
+All major RTL variants were checked against the Python-generated vectors. The
+expected detected resonance bin is 3 and the expected best energy is
+`2926974856033640715`.
+
+The current highest-Fmax architecture is:
+
+```text
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart
+```
+
+It is correct for the current continuous-valid vectors and reaches a derived
+post-route Fmax of 169.233 MHz.
+
+| Design | Sim | Latency | Fmax | LUTs | FFs | DSPs | Power | Critical path |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| Baseline | PASS | not measured | 47.299 MHz | 1579 | 1309 | 20 | 0.157 W | Control/magnitude path |
+| Pipelined | PASS | 11 | 107.434 MHz | 1680 | 2136 | 20 | 0.151 W | FIR-to-magnitude |
+| Plus1 | PASS | 12 | 116.523 MHz | 1679 | 2031 | 20 | 0.147 W | FIR final output |
+| Plus5 | PASS | 16 | 122.760 MHz | 1777 | 2131 | 20 | 0.149 W | Accumulator/tracker |
+| Plus5 FIR out accbuf | PASS | 18 | 129.099 MHz | 1792 | 2371 | 20 | 0.148 W | Magnitude DSP register |
+| Energy64 | PASS | 17 | 134.192 MHz | 1509 | 2043 | 18 | 0.141 W | Narrowed magnitude DSP cascade |
+| Energy62 FIR29 | PASS | 17 | 142.735 MHz | 1379 | 1912 | 10 | 0.126 W | FIR output rounding |
+| FIR29 fast-round | PASS | 17 | 163.532 MHz | 1285 | 1912 | 10 | 0.125 W | Magnitude-valid accumulator control |
+| Fast-round accstart | PASS | 17 | 117.165 MHz | 1342 | 1900 | 10 | 0.126 W | FIR valid/CE fanout |
+| Always-on FIR + accstart | PASS | 17 | 169.233 MHz | 1342 | 1831 | 10 | 0.125 W | Magnitude-square carry chain |
+
+Power is Vivado vectorless post-route power. Fmax is derived from the routed
+100 MHz checkpoint and the reported WNS.
+
+## Architecture Schematics
+
+### Baseline Datapath
+
+```mermaid
+flowchart LR
+    S[16-bit input samples] --> MIX[IQ mixer]
+    NCO[NCO sine/cosine ROMs] --> MIX
+    MIX --> FIRI[I FIR]
+    MIX --> FIRQ[Q FIR]
+    FIRI --> MAG[Magnitude square]
+    FIRQ --> MAG
+    MAG --> ACC[Bin accumulator]
+    ACC --> TRK[Resonance tracker]
+    TRK --> OUT[Detected bin]
+```
+
+The baseline is functionally correct, but the direct datapath fails the
+100 MHz timing target after implementation.
+
+### Pipelined Datapath
+
+```mermaid
+flowchart LR
+    S[Samples] --> MIX[Registered mixer]
+    MIX --> FIR[Pipelined FIR]
+    FIR --> BND[FIR-to-magnitude boundary]
+    BND --> MAG[Pipelined magnitude square]
+    MAG --> ACC[Accumulator]
+    ACC --> TRK[Tracker]
+    TRK --> OUT[Detected bin 3]
+```
+
+The first major pipeline raises post-route Fmax from 47.299 MHz to
+107.434 MHz while preserving the same detected bin and best energy.
+
+### Final Selected Architecture
+
+```mermaid
+flowchart LR
+    S[Samples] --> FIRAO[Always-on fast-round FIR]
+    V[sample_valid] --> VPIPE[Valid-only pipeline]
+    FIRAO --> B5[plus5 boundary registers]
+    VPIPE --> B5V[valid alignment]
+    B5 --> MAG29[29-bit magnitude operands]
+    B5V --> MAGV[magnitude valid]
+    MAG29 --> E62[62-bit energy]
+    MAGV --> ACC[Start-load accumulator]
+    E62 --> ACC
+    ACC --> BUF[Accumulator output buffer]
+    BUF --> TRK[62-bit tracker]
+    TRK --> OUT[Detected bin 3]
+```
+
+This final branch combines the two most recent lessons:
+
+- Accumulator start-load removes the reset-style `running_energy` clear path.
+- Always-on FIR arithmetic removes the FIR valid-to-CE fanout that made
+  start-load alone a negative result.
+
+The current bottleneck is now the narrowed magnitude-square carry chain, not
+FIR fanout and not accumulator reset/control.
+
+### Design Evolution
+
+```text
+Baseline direct datapath
+  -> Fmax 47.299 MHz, timing fails at 100 MHz
+
+Major pipelining
+  -> Fmax 107.434 MHz, timing passes
+
+Extra FIR/magnitude boundary registers
+  -> Plus1 116.523 MHz, Plus5 122.760 MHz
+
+Accumulator-output buffering
+  -> Fmax 129.099 MHz
+
+Precision and operand-width reduction
+  -> Energy64 134.192 MHz
+  -> Energy62 FIR29 142.735 MHz
+
+Algebraic FIR fast-round
+  -> Fmax 163.532 MHz
+
+Accumulator start-load alone
+  -> Fmax drops to 117.165 MHz because FIR valid/CE fanout dominates
+
+Always-on FIR plus accumulator start-load
+  -> Fmax 169.233 MHz, current highest-Fmax design
+```
+
+## Plots
+
+The generated plots are committed under `reports/plots/`.
+
+![Fmax vs latency](reports/plots/pipeline_fmax_vs_latency.svg)
+
+![Incremental Fmax gain](reports/plots/pipeline_incremental_fmax_gain.svg)
+
+![Area trade-off](reports/plots/pipeline_area_tradeoff.svg)
+
+![Power trade-off](reports/plots/pipeline_power_tradeoff.svg)
+
 ## Generate Golden Vectors
 
 The Python model uses only the standard library.
