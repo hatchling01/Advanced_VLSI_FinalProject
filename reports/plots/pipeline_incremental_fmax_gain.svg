@@ -1,85 +1,118 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="540" viewBox="0 0 1180 540">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720">
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="590.0" y="36.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1f2937">Incremental Fmax Gain Shows Diminishing Returns</text>
-<line x1="90" y1="430" x2="1140" y2="430" stroke="#2e3440" stroke-width="1.5"/>
-<line x1="90" y1="75" x2="90" y2="430" stroke="#2e3440" stroke-width="1.5"/>
-<line x1="90" y1="430.0" x2="1140" y2="430.0" stroke="#d7dde8" stroke-width="1"/>
-<text x="78.0" y="435.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">-62.3</text>
-<line x1="90" y1="359.0" x2="1140" y2="359.0" stroke="#d7dde8" stroke-width="1"/>
-<text x="78.0" y="364.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">-34.7</text>
-<line x1="90" y1="288.0" x2="1140" y2="288.0" stroke="#d7dde8" stroke-width="1"/>
-<text x="78.0" y="293.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">-7.0</text>
-<line x1="90" y1="217.0" x2="1140" y2="217.0" stroke="#d7dde8" stroke-width="1"/>
-<text x="78.0" y="222.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">20.7</text>
-<line x1="90" y1="146.0" x2="1140" y2="146.0" stroke="#d7dde8" stroke-width="1"/>
-<text x="78.0" y="151.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">48.4</text>
+<text x="590.0" y="58.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">Architecture steps are indexed below to avoid overlapping labels.</text>
+<line x1="90" y1="460" x2="1140" y2="460" stroke="#2e3440" stroke-width="1.5"/>
+<line x1="90" y1="75" x2="90" y2="460" stroke="#2e3440" stroke-width="1.5"/>
+<line x1="90" y1="460.0" x2="1140" y2="460.0" stroke="#d7dde8" stroke-width="1"/>
+<text x="78.0" y="465.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">-62.3</text>
+<line x1="90" y1="383.0" x2="1140" y2="383.0" stroke="#d7dde8" stroke-width="1"/>
+<text x="78.0" y="388.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">-34.7</text>
+<line x1="90" y1="306.0" x2="1140" y2="306.0" stroke="#d7dde8" stroke-width="1"/>
+<text x="78.0" y="311.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">-7.0</text>
+<line x1="90" y1="229.0" x2="1140" y2="229.0" stroke="#d7dde8" stroke-width="1"/>
+<text x="78.0" y="234.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">20.7</text>
+<line x1="90" y1="152.0" x2="1140" y2="152.0" stroke="#d7dde8" stroke-width="1"/>
+<text x="78.0" y="157.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">48.4</text>
 <line x1="90" y1="75.0" x2="1140" y2="75.0" stroke="#d7dde8" stroke-width="1"/>
 <text x="78.0" y="80.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">76.1</text>
-<line x1="90" y1="270.2" x2="1140" y2="270.2" stroke="#2e3440" stroke-width="1"/>
-<rect x="104.6" y="116.0" width="36.5" height="154.2" rx="4" fill="#2ca02c"/>
-<text x="122.8" y="106.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+60.135 MHz</text>
-<text x="122.8" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Baseline to Pipelined</text>
-<text x="122.8" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">latency unknown</text>
-<rect x="170.2" y="246.8" width="36.5" height="23.3" rx="4" fill="#2ca02c"/>
-<text x="188.4" y="236.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+9.089 MHz</text>
-<text x="188.4" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Pipelined to Plus1</text>
-<text x="188.4" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+1 cycles</text>
-<rect x="235.8" y="254.2" width="36.5" height="16.0" rx="4" fill="#2ca02c"/>
-<text x="254.1" y="244.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+6.237 MHz</text>
-<text x="254.1" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus1 to Plus5</text>
-<text x="254.1" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+4 cycles</text>
-<rect x="301.5" y="270.2" width="36.5" height="6.7" rx="4" fill="#d62728"/>
-<text x="319.7" y="294.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-2.625 MHz</text>
-<text x="319.7" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 to Plus5 Tracker</text>
-<text x="319.7" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+1 cycles</text>
-<rect x="367.1" y="264.3" width="36.5" height="5.8" rx="4" fill="#2ca02c"/>
-<text x="385.3" y="254.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+2.271 MHz</text>
-<text x="385.3" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 to Plus5 FIR Out</text>
-<text x="385.3" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+1 cycles</text>
-<rect x="432.7" y="270.2" width="36.5" height="12.6" rx="4" fill="#d62728"/>
-<text x="450.9" y="300.7" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-4.911 MHz</text>
-<text x="450.9" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 FIR Out to Plus5 FIR+Tracker</text>
-<text x="450.9" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+1 cycles</text>
-<rect x="498.3" y="259.7" width="36.5" height="10.4" rx="4" fill="#2ca02c"/>
-<text x="516.6" y="249.7" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+4.068 MHz</text>
-<text x="516.6" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 FIR Out to Plus5 FIR+AccBuf</text>
-<text x="516.6" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+1 cycles</text>
-<rect x="564.0" y="270.2" width="36.5" height="4.1" rx="4" fill="#d62728"/>
-<text x="582.2" y="292.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-1.613 MHz</text>
-<text x="582.2" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 FIR+AccBuf to Plus5 AccBuf+MagPipe</text>
-<text x="582.2" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+1 cycles</text>
-<rect x="629.6" y="270.2" width="36.5" height="15.6" rx="4" fill="#d62728"/>
-<text x="647.8" y="303.7" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-6.068 MHz</text>
-<text x="647.8" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 FIR+AccBuf to Plus5 AccBuf+TrackCmp</text>
-<text x="647.8" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+2 cycles</text>
-<rect x="695.2" y="270.2" width="36.5" height="5.0" rx="4" fill="#d62728"/>
-<text x="713.4" y="293.1" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-1.937 MHz</text>
-<text x="713.4" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 FIR+AccBuf to Plus5 AccBuf+Fanout</text>
-<text x="713.4" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+-1 cycles</text>
-<rect x="760.8" y="257.1" width="36.5" height="13.1" rx="4" fill="#2ca02c"/>
-<text x="779.1" y="247.1" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+5.093 MHz</text>
-<text x="779.1" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 FIR+AccBuf to Plus5 AccBuf+Energy64</text>
-<text x="779.1" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+-1 cycles</text>
-<rect x="826.5" y="270.1" width="36.5" height="0.0" rx="4" fill="#2ca02c"/>
-<text x="844.7" y="260.1" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+0.018 MHz</text>
-<text x="844.7" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 AccBuf+Energy64 to Plus5 AccBuf+Energy62</text>
-<text x="844.7" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+0 cycles</text>
-<rect x="892.1" y="248.3" width="36.5" height="21.9" rx="4" fill="#2ca02c"/>
-<text x="910.3" y="238.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+8.525 MHz</text>
-<text x="910.3" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 AccBuf+Energy62 to Plus5 AccBuf+E62 FIR29</text>
-<text x="910.3" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+0 cycles</text>
-<rect x="957.7" y="216.8" width="36.5" height="53.3" rx="4" fill="#2ca02c"/>
-<text x="975.9" y="206.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+20.797 MHz</text>
-<text x="975.9" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 AccBuf+E62 FIR29 to Plus5 E62 FIR29 FastRound</text>
-<text x="975.9" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+0 cycles</text>
-<rect x="1023.3" y="270.2" width="36.5" height="118.9" rx="4" fill="#d62728"/>
-<text x="1041.6" y="407.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-46.367 MHz</text>
-<text x="1041.6" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 E62 FIR29 FastRound to Plus5 FastRound+AccStart</text>
-<text x="1041.6" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+0 cycles</text>
-<rect x="1089.0" y="136.6" width="36.5" height="133.5" rx="4" fill="#2ca02c"/>
-<text x="1107.2" y="126.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+52.068 MHz</text>
-<text x="1107.2" y="454.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">Plus5 FastRound+AccStart to Plus5 AlwaysOn+AccStart</text>
-<text x="1107.2" y="475.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#1f2937">+0 cycles</text>
-<text x="615.0" y="518.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937">Architecture step</text>
-<text x="24" y="252.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" transform="rotate(-90 24 252.5)">Fmax gain (MHz)</text>
+<line x1="90" y1="286.6" x2="1140" y2="286.6" stroke="#2e3440" stroke-width="1"/>
+<rect x="104.6" y="119.4" width="36.5" height="167.2" rx="4" fill="#2ca02c"/>
+<text x="122.8" y="109.4" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+60.135 MHz</text>
+<text x="122.8" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S01</text>
+<text x="122.8" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">latency unknown</text>
+<rect x="170.2" y="261.4" width="36.5" height="25.3" rx="4" fill="#2ca02c"/>
+<text x="188.4" y="251.4" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+9.089 MHz</text>
+<text x="188.4" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S02</text>
+<text x="188.4" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+1 cycles</text>
+<rect x="235.8" y="269.3" width="36.5" height="17.3" rx="4" fill="#2ca02c"/>
+<text x="254.1" y="259.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+6.237 MHz</text>
+<text x="254.1" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S03</text>
+<text x="254.1" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+4 cycles</text>
+<rect x="301.5" y="286.6" width="36.5" height="7.3" rx="4" fill="#d62728"/>
+<text x="319.7" y="311.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-2.625 MHz</text>
+<text x="319.7" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S04</text>
+<text x="319.7" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+1 cycles</text>
+<rect x="367.1" y="280.3" width="36.5" height="6.3" rx="4" fill="#2ca02c"/>
+<text x="385.3" y="270.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+2.271 MHz</text>
+<text x="385.3" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S05</text>
+<text x="385.3" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+1 cycles</text>
+<rect x="432.7" y="286.6" width="36.5" height="13.7" rx="4" fill="#d62728"/>
+<text x="450.9" y="318.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-4.911 MHz</text>
+<text x="450.9" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S06</text>
+<text x="450.9" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+1 cycles</text>
+<rect x="498.3" y="275.3" width="36.5" height="11.3" rx="4" fill="#2ca02c"/>
+<text x="516.6" y="265.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+4.068 MHz</text>
+<text x="516.6" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S07</text>
+<text x="516.6" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+1 cycles</text>
+<rect x="564.0" y="286.6" width="36.5" height="4.5" rx="4" fill="#d62728"/>
+<text x="582.2" y="309.1" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-1.613 MHz</text>
+<text x="582.2" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S08</text>
+<text x="582.2" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+1 cycles</text>
+<rect x="629.6" y="286.6" width="36.5" height="16.9" rx="4" fill="#d62728"/>
+<text x="647.8" y="321.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-6.068 MHz</text>
+<text x="647.8" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S09</text>
+<text x="647.8" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+2 cycles</text>
+<rect x="695.2" y="286.6" width="36.5" height="5.4" rx="4" fill="#d62728"/>
+<text x="713.4" y="310.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-1.937 MHz</text>
+<text x="713.4" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S10</text>
+<text x="713.4" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+-1 cycles</text>
+<rect x="760.8" y="272.5" width="36.5" height="14.2" rx="4" fill="#2ca02c"/>
+<text x="779.1" y="262.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+5.093 MHz</text>
+<text x="779.1" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S11</text>
+<text x="779.1" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+-1 cycles</text>
+<rect x="826.5" y="286.6" width="36.5" height="0.1" rx="4" fill="#2ca02c"/>
+<text x="844.7" y="276.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+0.018 MHz</text>
+<text x="844.7" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S12</text>
+<text x="844.7" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+0 cycles</text>
+<rect x="892.1" y="262.9" width="36.5" height="23.7" rx="4" fill="#2ca02c"/>
+<text x="910.3" y="252.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+8.525 MHz</text>
+<text x="910.3" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S13</text>
+<text x="910.3" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+0 cycles</text>
+<rect x="957.7" y="228.8" width="36.5" height="57.8" rx="4" fill="#2ca02c"/>
+<text x="975.9" y="218.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+20.797 MHz</text>
+<text x="975.9" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S14</text>
+<text x="975.9" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+0 cycles</text>
+<rect x="1023.3" y="286.6" width="36.5" height="128.9" rx="4" fill="#d62728"/>
+<text x="1041.6" y="433.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">-46.367 MHz</text>
+<text x="1041.6" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S15</text>
+<text x="1041.6" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+0 cycles</text>
+<rect x="1089.0" y="141.9" width="36.5" height="144.8" rx="4" fill="#2ca02c"/>
+<text x="1107.2" y="131.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">+52.068 MHz</text>
+<text x="1107.2" y="482.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#1f2937">S16</text>
+<text x="1107.2" y="500.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">+0 cycles</text>
+<text x="90.0" y="528.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S01</text>
+<text x="120.0" y="528.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">Baseline to Pipelined</text>
+<text x="90.0" y="545.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S02</text>
+<text x="120.0" y="545.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">Pipelined to Plus1</text>
+<text x="90.0" y="562.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S03</text>
+<text x="120.0" y="562.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">Plus1 to Plus5</text>
+<text x="90.0" y="579.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S04</text>
+<text x="120.0" y="579.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">Plus5 to Tracker</text>
+<text x="90.0" y="596.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S05</text>
+<text x="120.0" y="596.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">Plus5 to FIR Out</text>
+<text x="90.0" y="613.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S06</text>
+<text x="120.0" y="613.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">FIR Out to FIR+Tracker</text>
+<text x="90.0" y="630.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S07</text>
+<text x="120.0" y="630.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">FIR Out to AccBuf</text>
+<text x="90.0" y="647.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S08</text>
+<text x="120.0" y="647.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">AccBuf to MagPipe</text>
+<text x="630.0" y="528.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S09</text>
+<text x="660.0" y="528.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">AccBuf to TrackCmp</text>
+<text x="630.0" y="545.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S10</text>
+<text x="660.0" y="545.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">AccBuf to Fanout</text>
+<text x="630.0" y="562.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S11</text>
+<text x="660.0" y="562.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">AccBuf to Energy64</text>
+<text x="630.0" y="579.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S12</text>
+<text x="660.0" y="579.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">Energy64 to Energy62</text>
+<text x="630.0" y="596.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S13</text>
+<text x="660.0" y="596.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">Energy62 to E62 FIR29</text>
+<text x="630.0" y="613.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S14</text>
+<text x="660.0" y="613.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">E62 FIR29 to FastRound</text>
+<text x="630.0" y="630.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S15</text>
+<text x="660.0" y="630.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">FastRound to AccStart</text>
+<text x="630.0" y="647.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1f2937">S16</text>
+<text x="660.0" y="647.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#4b5563">AccStart to AlwaysOn+AccStart</text>
+<text x="615.0" y="698.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937">Architecture step</text>
+<text x="24" y="267.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" transform="rotate(-90 24 267.5)">Fmax gain (MHz)</text>
 </svg>

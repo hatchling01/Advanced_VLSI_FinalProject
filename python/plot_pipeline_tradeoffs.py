@@ -104,6 +104,28 @@ def svg_text(x, y, text, size=14, anchor="middle", weight="400", fill=None):
     )
 
 
+def short_step_label(label):
+    replacements = {
+        "Plus5 E62 FIR29 FastRound": "FastRound",
+        "Plus5 FastRound+AccStart": "AccStart",
+        "Plus5 AlwaysOn+AccStart": "AlwaysOn+AccStart",
+        "Plus5 AccBuf+E62 FIR29": "E62 FIR29",
+        "Plus5 AccBuf+Energy62": "Energy62",
+        "Plus5 AccBuf+Energy64": "Energy64",
+        "Plus5 AccBuf+MagPipe": "MagPipe",
+        "Plus5 AccBuf+TrackCmp": "TrackCmp",
+        "Plus5 AccBuf+Fanout": "Fanout",
+        "Plus5 FIR+AccBuf": "AccBuf",
+        "Plus5 FIR+Tracker": "FIR+Tracker",
+        "Plus5 FIR Out": "FIR Out",
+        "Plus5 Tracker": "Tracker",
+    }
+    short = label
+    for old, new in replacements.items():
+        short = short.replace(old, new)
+    return short
+
+
 def write_svg(path, width, height, body):
     content = "\n".join(
         [
@@ -236,11 +258,11 @@ def line_chart(
 
 def grouped_bar_chart(path, title, rows, metrics, y_label):
     width = 1080
-    height = 600
+    height = 760
     left = 90
     right = 40
     top = 75
-    bottom = 105
+    bottom = 260
     plot_w = width - left - right
     plot_h = height - top - bottom
 
@@ -253,6 +275,7 @@ def grouped_bar_chart(path, title, rows, metrics, y_label):
 
     body = [
         svg_text(width / 2, 36, title, 22, weight="700"),
+        svg_text(width / 2, 58, "Designs are indexed below to keep the x-axis readable.", 13, fill="#4b5563"),
         f'<line x1="{left}" y1="{top + plot_h}" x2="{left + plot_w}" y2="{top + plot_h}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>',
         f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_h}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>',
     ]
@@ -270,7 +293,7 @@ def grouped_bar_chart(path, title, rows, metrics, y_label):
     for row_idx, row in enumerate(rows):
         group_x = left + row_idx * group_w
         center = group_x + group_w / 2
-        body.append(svg_text(center, top + plot_h + 25, LABELS[row["design"]], 13, weight="700"))
+        body.append(svg_text(center, top + plot_h + 22, f"D{row_idx + 1:02d}", 11, weight="700"))
         for metric_idx, (key, _label) in enumerate(metrics):
             value = numeric(row[key])
             if value is None:
@@ -287,8 +310,19 @@ def grouped_bar_chart(path, title, rows, metrics, y_label):
     legend_x = left + 20
     for idx, (_, label) in enumerate(metrics):
         x = legend_x + idx * 145
-        body.append(f'<rect x="{x}" y="{height - 58}" width="15" height="15" fill="{metric_colors[idx % len(metric_colors)]}"/>')
-        body.append(svg_text(x + 22, height - 45, label, 13, anchor="start"))
+        body.append(f'<rect x="{x}" y="{height - 70}" width="15" height="15" fill="{metric_colors[idx % len(metric_colors)]}"/>')
+        body.append(svg_text(x + 22, height - 57, label, 13, anchor="start"))
+
+    key_top = top + plot_h + 48
+    key_col_w = 325
+    key_row_h = 18
+    for row_idx, row in enumerate(rows):
+        col = row_idx // 6
+        line = row_idx % 6
+        x = left + col * key_col_w
+        y = key_top + line * key_row_h
+        body.append(svg_text(x, y, f"D{row_idx + 1:02d}", 10, anchor="start", weight="700"))
+        body.append(svg_text(x + 28, y, LABELS[row["design"]], 10, anchor="start", fill="#4b5563"))
 
     body.append(svg_text(left + plot_w / 2, height - 18, "Design variant", 15, weight="700"))
     body.append(
@@ -340,11 +374,11 @@ def incremental_gain_chart(path, rows):
         )
 
     width = 1180
-    height = 540
+    height = 720
     left = 90
     right = 40
     top = 75
-    bottom = 110
+    bottom = 260
     plot_w = width - left - right
     plot_h = height - top - bottom
 
@@ -355,6 +389,7 @@ def incremental_gain_chart(path, rows):
 
     body = [
         svg_text(width / 2, 36, "Incremental Fmax Gain Shows Diminishing Returns", 22, weight="700"),
+        svg_text(width / 2, 58, "Architecture steps are indexed below to avoid overlapping labels.", 13, fill="#4b5563"),
         f'<line x1="{left}" y1="{top + plot_h}" x2="{left + plot_w}" y2="{top + plot_h}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>',
         f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_h}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>',
     ]
@@ -379,9 +414,20 @@ def incremental_gain_chart(path, rows):
         label_y = rect_y - 10 if step["gain"] >= 0 else rect_y + h + 18
         body.append(f'<rect x="{center - bar_w / 2:.1f}" y="{rect_y:.1f}" width="{bar_w:.1f}" height="{h:.1f}" rx="4" fill="{color}"/>')
         body.append(svg_text(center, label_y, gain_text, 13, weight="700"))
-        body.append(svg_text(center, top + plot_h + 24, step["label"], 12))
+        body.append(svg_text(center, top + plot_h + 22, f"S{idx + 1:02d}", 11, weight="700"))
         latency_text = "latency unknown" if step["latency_delta"] is None else f'+{step["latency_delta"]:.0f} cycles'
-        body.append(svg_text(center, top + plot_h + 45, latency_text, 12))
+        body.append(svg_text(center, top + plot_h + 40, latency_text, 10, fill="#4b5563"))
+
+    key_top = top + plot_h + 68
+    key_col_w = 540
+    key_row_h = 17
+    for idx, step in enumerate(steps):
+        col = idx // 8
+        line = idx % 8
+        x = left + col * key_col_w
+        y = key_top + line * key_row_h
+        body.append(svg_text(x, y, f"S{idx + 1:02d}", 10, anchor="start", weight="700"))
+        body.append(svg_text(x + 30, y, short_step_label(step["label"]), 10, anchor="start", fill="#4b5563"))
 
     body.append(svg_text(left + plot_w / 2, height - 22, "Architecture step", 15, weight="700"))
     body.append(

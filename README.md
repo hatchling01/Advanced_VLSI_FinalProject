@@ -220,6 +220,8 @@ The generated plots are committed under `reports/plots/`.
 
 The Fmax-vs-latency plot shows every implemented variant, but only labels the
 major decision points so the 17-cycle design cluster remains readable.
+The area, power, and incremental-gain plots use `D##` or `S##` axis labels with
+the full design/step key shown below each plot to avoid overlapping text.
 
 ![Clean Fmax vs latency plot](reports/plots/pipeline_fmax_vs_latency.svg)
 
