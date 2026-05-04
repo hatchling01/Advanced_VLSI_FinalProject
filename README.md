@@ -23,6 +23,21 @@ real-time resonance tracking.
 - `reports/` - synthesis, timing, utilization, and simulation outputs
 - `docs/` - report notes and project documentation
 
+## Full Reports
+
+The README is a compact landing page. The complete design-decision narrative,
+including positive and negative branches, is maintained in:
+
+- [`docs/pipeline_tradeoff_report.md`](docs/pipeline_tradeoff_report.md) -
+  final trade-off report with timing, area, power, critical paths, and
+  conclusion
+- [`docs/design_insights_by_stage.md`](docs/design_insights_by_stage.md) -
+  stage-by-stage explanation of what each architecture taught us
+- [`docs/architecture_schematics.md`](docs/architecture_schematics.md) -
+  schematic-style design evolution diagrams
+- [`docs/progress_results.md`](docs/progress_results.md) - running project log
+  and result history
+
 ## Current Results Snapshot
 
 All major RTL variants were checked against the Python-generated vectors. The
@@ -145,6 +160,59 @@ Accumulator start-load alone
 Always-on FIR plus accumulator start-load
   -> Fmax 169.233 MHz, current highest-Fmax design
 ```
+
+## Design Insights and Decisions
+
+This project is not just a baseline-versus-final comparison. Each architecture
+variant was chosen because the previous timing report exposed a specific
+bottleneck.
+
+Key decisions:
+
+- Baseline RTL was kept as the correctness and timing-failure reference. It
+  detects the right bin, but reaches only 47.299 MHz after route.
+- The first major pipelined design became the foundation because it raised Fmax
+  to 107.434 MHz and passed the 100 MHz target.
+- `plus1` remains the best balanced point: it reaches 116.523 MHz with only
+  one additional cycle beyond the original pipelined design.
+- `plus5` showed diminishing returns. It improved Fmax, but moved the critical
+  path out of FIR-to-magnitude and into accumulator/tracker logic.
+- Tracker-only and tracker-compare pipelines were recorded as negative results.
+  They were functionally correct, but added latency/register cost and moved the
+  bottleneck back elsewhere.
+- Precision reduction was the strongest architectural lever. Narrowing the
+  energy datapath and then the FIR/magnitude operands reduced LUTs, FFs, DSPs,
+  and power while improving Fmax.
+- The FIR29 fast-round branch showed that algebraic RTL simplification can beat
+  another pipeline register: it improved Fmax from 142.735 MHz to 163.532 MHz
+  without adding latency.
+- Accumulator start-load alone was a useful negative result. It removed the
+  targeted reset-style accumulator path, but exposed a worse FIR valid/CE
+  fanout path and dropped Fmax to 117.165 MHz.
+- The final always-on FIR plus accumulator start-load branch fixed that fanout
+  issue. It made `valid` a validity pipeline instead of a high-fanout FIR
+  arithmetic enable and reached 169.233 MHz.
+
+Final conclusion:
+
+```text
+The selected implementation is:
+
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart
+
+It is the current highest-Fmax architecture for the current continuous-valid
+vectors. It preserves the Python golden result, keeps 17-cycle final-sample
+latency, uses 10 DSPs, and reaches 169.233 MHz derived post-route Fmax.
+```
+
+The main caveat is scope: the 62-bit energy width, 29-bit FIR/magnitude width,
+and always-on FIR behavior are validated for the current generated vectors. If
+the input amplitude, accumulation window, FIR scaling, or `sample_valid`
+stalling behavior changes, those assumptions should be revalidated.
+
+The next measured bottleneck is the narrowed magnitude-square carry chain.
+Future timing work should target that arithmetic path before returning to
+accumulator iteration or control logic.
 
 ## Plots
 
