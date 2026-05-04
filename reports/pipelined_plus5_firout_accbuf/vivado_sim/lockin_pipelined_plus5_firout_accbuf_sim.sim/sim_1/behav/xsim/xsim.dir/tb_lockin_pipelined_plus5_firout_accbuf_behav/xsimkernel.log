@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_lockin_pipelined_plus5_firout_accbuf_behav/xsimk.exe -simmode gui -wdb tb_lockin_pipelined_plus5_firout_accbuf_behav.wdb -simrunnum 0 -socket 50570
+Design successfully loaded
+Design Loading Memory Usage: 10984 KB (Peak: 10984 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 12752 KB (Peak: 12752 KB)
+Simulation CPU Usage: 108 ms

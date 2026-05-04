@@ -1,0 +1,5 @@
+Expected bin: 3
+Detected bin: 3
+Best energy:  2926974856033640715
+Latency after final sample: 16 cycles
+PASS

@@ -1,0 +1,814 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun May  3 22:18:23 2026
+| Host         : Navnil_Desktop running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 10 -file C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_impl/post_route_critical_paths.rpt
+| Design       : lockin_pipelined_plus5_firout_accbuf_energy62_fir29_top
+| Device       : 7a35t-fgg484
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.994ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.012ns  (logic 3.322ns (47.378%)  route 3.690ns (52.622%))
+  Logic Levels:           11  (CARRY4=8 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.308ns = ( 14.308 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.240 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.240    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_0
+    SLICE_X7Y34          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    10.553 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2/O[3]
+                         net (fo=1, routed)           0.791    11.344    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2_n_4
+    SLICE_X4Y32          LUT3 (Prop_lut3_I0_O)        0.331    11.675 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[28]_i_1/O
+                         net (fo=1, routed)           0.000    11.675    u_impl/gen_fir_outreg.u_fir_q/sample_out[28]_i_1_n_0
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.512    14.308    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]/C
+                         clock pessimism              0.321    14.629    
+                         clock uncertainty           -0.035    14.594    
+    SLICE_X4Y32          FDRE (Setup_fdre_C_D)        0.075    14.669    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]
+  -------------------------------------------------------------------
+                         required time                         14.669    
+                         arrival time                         -11.675    
+  -------------------------------------------------------------------
+                         slack                                  2.994    
+
+Slack (MET) :             3.001ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[27]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.005ns  (logic 3.248ns (46.369%)  route 3.757ns (53.631%))
+  Logic Levels:           11  (CARRY4=8 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.308ns = ( 14.308 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.240 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.240    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_0
+    SLICE_X7Y34          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239    10.479 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2/O[2]
+                         net (fo=1, routed)           0.858    11.337    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2_n_5
+    SLICE_X4Y32          LUT3 (Prop_lut3_I0_O)        0.331    11.668 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[27]_i_1/O
+                         net (fo=1, routed)           0.000    11.668    u_impl/gen_fir_outreg.u_fir_q/sample_out[27]_i_1_n_0
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[27]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.512    14.308    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[27]/C
+                         clock pessimism              0.321    14.629    
+                         clock uncertainty           -0.035    14.594    
+    SLICE_X4Y32          FDRE (Setup_fdre_C_D)        0.075    14.669    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[27]
+  -------------------------------------------------------------------
+                         required time                         14.669    
+                         arrival time                         -11.668    
+  -------------------------------------------------------------------
+                         slack                                  3.001    
+
+Slack (MET) :             3.182ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.781ns  (logic 3.315ns (48.887%)  route 3.466ns (51.113%))
+  Logic Levels:           11  (CARRY4=8 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.308ns = ( 14.308 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.240 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.240    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_0
+    SLICE_X7Y34          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    10.574 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2/O[1]
+                         net (fo=1, routed)           0.567    11.141    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2_n_6
+    SLICE_X4Y32          LUT3 (Prop_lut3_I0_O)        0.303    11.444 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[26]_i_1/O
+                         net (fo=1, routed)           0.000    11.444    u_impl/gen_fir_outreg.u_fir_q/sample_out[26]_i_1_n_0
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.512    14.308    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[26]/C
+                         clock pessimism              0.321    14.629    
+                         clock uncertainty           -0.035    14.594    
+    SLICE_X4Y32          FDRE (Setup_fdre_C_D)        0.032    14.626    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[26]
+  -------------------------------------------------------------------
+                         required time                         14.626    
+                         arrival time                         -11.444    
+  -------------------------------------------------------------------
+                         slack                                  3.182    
+
+Slack (MET) :             3.182ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.825ns  (logic 3.209ns (47.021%)  route 3.616ns (52.979%))
+  Logic Levels:           10  (CARRY4=7 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.033ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.309ns = ( 14.309 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    10.439 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/O[3]
+                         net (fo=1, routed)           0.717    11.156    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_4
+    SLICE_X5Y33          LUT3 (Prop_lut3_I0_O)        0.332    11.488 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[24]_i_1/O
+                         net (fo=1, routed)           0.000    11.488    u_impl/gen_fir_outreg.u_fir_q/sample_out[24]_i_1_n_0
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.513    14.309    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]/C
+                         clock pessimism              0.321    14.630    
+                         clock uncertainty           -0.035    14.595    
+    SLICE_X5Y33          FDRE (Setup_fdre_C_D)        0.075    14.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]
+  -------------------------------------------------------------------
+                         required time                         14.670    
+                         arrival time                         -11.488    
+  -------------------------------------------------------------------
+                         slack                                  3.182    
+
+Slack (MET) :             3.283ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.678ns  (logic 3.199ns (47.900%)  route 3.479ns (52.100%))
+  Logic Levels:           11  (CARRY4=8 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.308ns = ( 14.308 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.240 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.240    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_0
+    SLICE_X7Y34          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    10.462 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2/O[0]
+                         net (fo=1, routed)           0.581    11.043    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]_i_2_n_7
+    SLICE_X4Y32          LUT3 (Prop_lut3_I0_O)        0.299    11.342 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[25]_i_1/O
+                         net (fo=1, routed)           0.000    11.342    u_impl/gen_fir_outreg.u_fir_q/sample_out[25]_i_1_n_0
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.512    14.308    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[25]/C
+                         clock pessimism              0.321    14.629    
+                         clock uncertainty           -0.035    14.594    
+    SLICE_X4Y32          FDRE (Setup_fdre_C_D)        0.031    14.625    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[25]
+  -------------------------------------------------------------------
+                         required time                         14.625    
+                         arrival time                         -11.342    
+  -------------------------------------------------------------------
+                         slack                                  3.283    
+
+Slack (MET) :             3.318ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.645ns  (logic 3.201ns (48.173%)  route 3.444ns (51.827%))
+  Logic Levels:           10  (CARRY4=7 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.033ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.309ns = ( 14.309 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    10.460 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/O[1]
+                         net (fo=1, routed)           0.545    11.005    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_6
+    SLICE_X5Y33          LUT3 (Prop_lut3_I0_O)        0.303    11.308 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[22]_i_1/O
+                         net (fo=1, routed)           0.000    11.308    u_impl/gen_fir_outreg.u_fir_q/sample_out[22]_i_1_n_0
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.513    14.309    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[22]/C
+                         clock pessimism              0.321    14.630    
+                         clock uncertainty           -0.035    14.595    
+    SLICE_X5Y33          FDRE (Setup_fdre_C_D)        0.031    14.626    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[22]
+  -------------------------------------------------------------------
+                         required time                         14.626    
+                         arrival time                         -11.308    
+  -------------------------------------------------------------------
+                         slack                                  3.318    
+
+Slack (MET) :             3.354ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.624ns  (logic 2.678ns (40.430%)  route 3.946ns (59.570%))
+  Logic Levels:           6  (CARRY4=3 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.105ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.237ns = ( 14.237 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     9.909 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/O[2]
+                         net (fo=1, routed)           1.047    10.956    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_5
+    SLICE_X8Y28          LUT3 (Prop_lut3_I0_O)        0.331    11.287 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[7]_i_1/O
+                         net (fo=1, routed)           0.000    11.287    u_impl/gen_fir_outreg.u_fir_q/sample_out[7]_i_1_n_0
+    SLICE_X8Y28          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.441    14.237    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X8Y28          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[7]/C
+                         clock pessimism              0.321    14.558    
+                         clock uncertainty           -0.035    14.523    
+    SLICE_X8Y28          FDRE (Setup_fdre_C_D)        0.118    14.641    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[7]
+  -------------------------------------------------------------------
+                         required time                         14.641    
+                         arrival time                         -11.287    
+  -------------------------------------------------------------------
+                         slack                                  3.354    
+
+Slack (MET) :             3.375ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.631ns  (logic 3.097ns (46.708%)  route 3.534ns (53.292%))
+  Logic Levels:           9  (CARRY4=6 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.308ns = ( 14.308 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    10.325 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/O[3]
+                         net (fo=1, routed)           0.635    10.960    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_4
+    SLICE_X4Y32          LUT3 (Prop_lut3_I0_O)        0.334    11.294 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[20]_i_1/O
+                         net (fo=1, routed)           0.000    11.294    u_impl/gen_fir_outreg.u_fir_q/sample_out[20]_i_1_n_0
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.512    14.308    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X4Y32          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]/C
+                         clock pessimism              0.321    14.629    
+                         clock uncertainty           -0.035    14.594    
+    SLICE_X4Y32          FDRE (Setup_fdre_C_D)        0.075    14.669    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]
+  -------------------------------------------------------------------
+                         required time                         14.669    
+                         arrival time                         -11.294    
+  -------------------------------------------------------------------
+                         slack                                  3.375    
+
+Slack (MET) :             3.375ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[21]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.585ns  (logic 3.085ns (46.847%)  route 3.500ns (53.153%))
+  Logic Levels:           10  (CARRY4=7 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.033ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.309ns = ( 14.309 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    10.348 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/O[0]
+                         net (fo=1, routed)           0.601    10.950    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_7
+    SLICE_X5Y33          LUT3 (Prop_lut3_I0_O)        0.299    11.249 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[21]_i_1/O
+                         net (fo=1, routed)           0.000    11.249    u_impl/gen_fir_outreg.u_fir_q/sample_out[21]_i_1_n_0
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.513    14.309    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[21]/C
+                         clock pessimism              0.321    14.630    
+                         clock uncertainty           -0.035    14.595    
+    SLICE_X5Y33          FDRE (Setup_fdre_C_D)        0.029    14.624    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[21]
+  -------------------------------------------------------------------
+                         required time                         14.624    
+                         arrival time                         -11.249    
+  -------------------------------------------------------------------
+                         slack                                  3.375    
+
+Slack (MET) :             3.406ns  (required time - arrival time)
+  Source:                 u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.601ns  (logic 3.131ns (47.436%)  route 3.470ns (52.564%))
+  Logic Levels:           10  (CARRY4=7 LUT1=2 LUT3=1)
+  Clock Path Skew:        -0.033ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.309ns = ( 14.309 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.663ns
+    Clock Pessimism Removal (CPR):    0.321ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.625     4.663    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y19          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y19          FDRE (Prop_fdre_C_Q)         0.456     5.119 f  u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/Q
+                         net (fo=1, routed)           0.561     5.680    u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg_n_0_[0]
+    SLICE_X4Y16          LUT1 (Prop_lut1_I0_O)        0.124     5.804 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3/O
+                         net (fo=1, routed)           0.617     6.422    u_impl/gen_fir_outreg.u_fir_q/sample_out[0]_i_3_n_0
+    SLICE_X7Y20          CARRY4 (Prop_carry4_CYINIT_O[3])
+                                                      0.642     7.064 f  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2/O[3]
+                         net (fo=2, routed)           0.634     7.698    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[0]_i_2_n_4
+    SLICE_X2Y16          LUT1 (Prop_lut1_I0_O)        0.306     8.004 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3/O
+                         net (fo=1, routed)           1.086     9.090    u_impl/gen_fir_outreg.u_fir_q/sample_out[4]_i_3_n_0
+    SLICE_X7Y28          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     9.670 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[4]_i_2_n_0
+    SLICE_X7Y29          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.784 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.784    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[8]_i_2_n_0
+    SLICE_X7Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.898 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2/CO[3]
+                         net (fo=1, routed)           0.000     9.898    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[12]_i_2_n_0
+    SLICE_X7Y31          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.012 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.012    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[16]_i_2_n_0
+    SLICE_X7Y32          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.126 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    10.126    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[20]_i_2_n_0
+    SLICE_X7Y33          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239    10.365 r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2/O[2]
+                         net (fo=1, routed)           0.571    10.936    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[24]_i_2_n_5
+    SLICE_X5Y33          LUT3 (Prop_lut3_I0_O)        0.328    11.264 r  u_impl/gen_fir_outreg.u_fir_q/sample_out[23]_i_1/O
+                         net (fo=1, routed)           0.000    11.264    u_impl/gen_fir_outreg.u_fir_q/sample_out[23]_i_1_n_0
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1985, routed)        1.513    14.309    u_impl/gen_fir_outreg.u_fir_q/clk_IBUF_BUFG
+    SLICE_X5Y33          FDRE                                         r  u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[23]/C
+                         clock pessimism              0.321    14.630    
+                         clock uncertainty           -0.035    14.595    
+    SLICE_X5Y33          FDRE (Setup_fdre_C_D)        0.075    14.670    u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[23]
+  -------------------------------------------------------------------
+                         required time                         14.670    
+                         arrival time                         -11.264    
+  -------------------------------------------------------------------
+                         slack                                  3.406    
+
+
+
+

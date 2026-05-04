@@ -1,0 +1,3 @@
+Stage-A place probe for pipelined_plus5_firout_accbuf_fanout
+This run intentionally stops after place_design.
+Continue to full route only if high-fanout control nets are meaningfully reduced without a suspicious new timing path.

@@ -1,0 +1,178 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sun May  3 23:15:01 2026
+# Process ID         : 40144
+# Current directory  : C:/Users/CHOUDN3/Downloads/VLSI_project
+# Command line       : vivado.exe -mode batch -source vivado\sim_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.tcl
+# Log file           : C:/Users/CHOUDN3/Downloads/VLSI_project/vivado.log
+# Journal file       : C:/Users/CHOUDN3/Downloads/VLSI_project\vivado.jou
+# Running On         : Navnil_Desktop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 9 9950X 16-Core Processor            
+# CPU Frequency      : 4292 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 66199 MB
+# Swap memory        : 127914 MB
+# Total Virtual      : 194113 MB
+# Available Virtual  : 114262 MB
+#-----------------------------------------------------------
+source {vivado\sim_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.tcl}
+# set script_dir [file dirname [info script]]
+# set root_dir [file normalize [file join $script_dir ..]]
+# set sim_dir [file join $root_dir reports e62_fir29_fr_ao_accstart vivado_sim]
+# set xsim_run_dir [file join $sim_dir e62_fir29_fr_ao_accstart_sim.sim sim_1 behav xsim]
+# file mkdir $sim_dir
+# cd $root_dir
+# create_project -force e62_fir29_fr_ao_accstart_sim $sim_dir -part xc7a35tcpg236-1
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart/vivado_sim'
+# file mkdir [file join $xsim_run_dir vectors]
+# foreach vector_file [glob -nocomplain [file join $root_dir vectors *]] {
+#     file copy -force $vector_file [file join $xsim_run_dir vectors]
+# }
+# read_verilog -sv [list \
+#     [file join $root_dir rtl nco.sv] \
+#     [file join $root_dir rtl iq_mixer.sv] \
+#     [file join $root_dir rtl fir_filter.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg_fanout.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg_fast_round.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg_fast_round_alwayson.sv] \
+#     [file join $root_dir rtl magnitude_sq.sv] \
+#     [file join $root_dir rtl magnitude_sq_pipelined.sv] \
+#     [file join $root_dir rtl magnitude_sq_pipelined_fanout.sv] \
+#     [file join $root_dir rtl magnitude_sq_chunked_pipeline.sv] \
+#     [file join $root_dir rtl magnitude_sq_narrow_pipelined.sv] \
+#     [file join $root_dir rtl bin_accumulator.sv] \
+#     [file join $root_dir rtl bin_accumulator_startload.sv] \
+#     [file join $root_dir rtl resonance_tracker.sv] \
+#     [file join $root_dir rtl resonance_tracker_pipelined.sv] \
+#     [file join $root_dir rtl resonance_tracker_compare_pipeline.sv] \
+#     [file join $root_dir rtl resonance_tracker_fanout.sv] \
+#     [file join $root_dir rtl lockin_pipelined_boundary_top.sv] \
+#     [file join $root_dir rtl lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.sv] \
+#     [file join $root_dir tb tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.sv] \
+# ]
+# set_property top tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart [get_filesets sim_1]
+# set_property -name {xsim.simulate.runtime} -value {all} -objects [get_filesets sim_1]
+# update_compile_order -fileset sim_1
+# launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Sun May  3 23:15:08 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart/vivado_sim/e62_fir29_fr_ao_accstart_sim.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart/vivado_sim/e62_fir29_fr_ao_accstart_sim.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/bin_accumulator.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin_accumulator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/bin_accumulator_startload.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin_accumulator_startload
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined_outreg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fanout.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined_outreg_fanout
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fast_round.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined_outreg_fast_round
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fast_round_alwayson.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined_outreg_fast_round_alwayson
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/iq_mixer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module iq_mixer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lockin_pipelined_boundary_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_chunked_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_chunked_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_narrow_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_narrow_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_pipelined_fanout.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_pipelined_fanout
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nco
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker_compare_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker_compare_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker_fanout.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker_fanout
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/tb/tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart/vivado_sim/e62_fir29_fr_ao_accstart_sim.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart/vivado_sim/e62_fir29_fr_ao_accstart_sim.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_behav xil_defaultlib.tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_behav xil_defaultlib.tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.nco_default
+Compiling module xil_defaultlib.iq_mixer(MIX_WIDTH=32)
+Compiling module xil_defaultlib.fir_filter_pipelined_outreg_fast...
+Compiling module xil_defaultlib.magnitude_sq_narrow_pipelined(IN...
+Compiling module xil_defaultlib.bin_accumulator_startload(ENERGY...
+Compiling module xil_defaultlib.resonance_tracker(ENERGY_WIDTH=6...
+Compiling module xil_defaultlib.lockin_pipelined_boundary_top(MI...
+Compiling module xil_defaultlib.lockin_pipelined_plus5_firout_ac...
+Compiling module xil_defaultlib.tb_lockin_pipelined_plus5_firout...
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart/vivado_sim/e62_fir29_fr_ao_accstart_sim.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_behav -key {Behavioral:sim_1:Functional:tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart} -tclbatch {tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run all
+Expected bin: 3
+Detected bin: 3
+Best energy:  2926974856033640715
+Latency after final sample: 17 cycles
+PASS
+$finish called at time : 5340 ns : File "C:/Users/CHOUDN3/Downloads/VLSI_project/tb/tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.sv" Line 124
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for all
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 537.043 ; gain = 7.414
+# close_sim
+INFO: [Simtcl 6-16] Simulation closed
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Sun May  3 23:15:15 2026...

@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_lockin_baseline_behav/xsimk.exe -simmode gui -wdb tb_lockin_baseline_behav.wdb -simrunnum 0 -socket 55673
+Design successfully loaded
+Design Loading Memory Usage: 10028 KB (Peak: 10028 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 11720 KB (Peak: 11720 KB)
+Simulation CPU Usage: 93 ms

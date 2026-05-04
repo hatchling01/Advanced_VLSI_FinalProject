@@ -1,0 +1,1007 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun May  3 19:05:37 2026
+| Host         : Navnil_Desktop running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 10 -file C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_impl/post_route_critical_paths.rpt
+| Design       : lockin_pipelined_plus5_firout_top
+| Device       : 7a35t-fgg484
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.002ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]_lopt_replica/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.648ns  (logic 2.806ns (36.690%)  route 4.842ns (63.310%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.058ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.420ns = ( 14.420 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.424    12.260    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X12Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]_lopt_replica/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.608    14.420    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X12Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]_lopt_replica/C
+                         clock pessimism              0.250    14.670    
+                         clock uncertainty           -0.035    14.635    
+    SLICE_X12Y116        FDRE (Setup_fdre_C_CE)      -0.373    14.262    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]_lopt_replica
+  -------------------------------------------------------------------
+                         required time                         14.262    
+                         arrival time                         -12.260    
+  -------------------------------------------------------------------
+                         slack                                  2.002    
+
+Slack (MET) :             2.002ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[114]_lopt_replica/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.648ns  (logic 2.806ns (36.690%)  route 4.842ns (63.310%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.058ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.420ns = ( 14.420 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.424    12.260    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X12Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[114]_lopt_replica/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.608    14.420    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X12Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[114]_lopt_replica/C
+                         clock pessimism              0.250    14.670    
+                         clock uncertainty           -0.035    14.635    
+    SLICE_X12Y116        FDRE (Setup_fdre_C_CE)      -0.373    14.262    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[114]_lopt_replica
+  -------------------------------------------------------------------
+                         required time                         14.262    
+                         arrival time                         -12.260    
+  -------------------------------------------------------------------
+                         slack                                  2.002    
+
+Slack (MET) :             2.002ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[116]_lopt_replica/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.648ns  (logic 2.806ns (36.690%)  route 4.842ns (63.310%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.058ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.420ns = ( 14.420 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.424    12.260    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X12Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[116]_lopt_replica/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.608    14.420    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X12Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[116]_lopt_replica/C
+                         clock pessimism              0.250    14.670    
+                         clock uncertainty           -0.035    14.635    
+    SLICE_X12Y116        FDRE (Setup_fdre_C_CE)      -0.373    14.262    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[116]_lopt_replica
+  -------------------------------------------------------------------
+                         required time                         14.262    
+                         arrival time                         -12.260    
+  -------------------------------------------------------------------
+                         slack                                  2.002    
+
+Slack (MET) :             2.044ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[119]_lopt_replica/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.602ns  (logic 2.806ns (36.913%)  route 4.796ns (63.087%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.054ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.416ns = ( 14.416 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.378    12.214    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X12Y119        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[119]_lopt_replica/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.604    14.416    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X12Y119        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[119]_lopt_replica/C
+                         clock pessimism              0.250    14.666    
+                         clock uncertainty           -0.035    14.631    
+    SLICE_X12Y119        FDRE (Setup_fdre_C_CE)      -0.373    14.258    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[119]_lopt_replica
+  -------------------------------------------------------------------
+                         required time                         14.258    
+                         arrival time                         -12.214    
+  -------------------------------------------------------------------
+                         slack                                  2.044    
+
+Slack (MET) :             2.047ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[120]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.565ns  (logic 2.806ns (37.094%)  route 4.759ns (62.906%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.056ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.418ns = ( 14.418 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.341    12.177    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[120]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.606    14.418    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[120]/C
+                         clock pessimism              0.250    14.668    
+                         clock uncertainty           -0.035    14.633    
+    SLICE_X16Y117        FDRE (Setup_fdre_C_CE)      -0.409    14.224    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[120]
+  -------------------------------------------------------------------
+                         required time                         14.224    
+                         arrival time                         -12.177    
+  -------------------------------------------------------------------
+                         slack                                  2.047    
+
+Slack (MET) :             2.047ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[121]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.565ns  (logic 2.806ns (37.094%)  route 4.759ns (62.906%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.056ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.418ns = ( 14.418 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.341    12.177    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[121]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.606    14.418    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[121]/C
+                         clock pessimism              0.250    14.668    
+                         clock uncertainty           -0.035    14.633    
+    SLICE_X16Y117        FDRE (Setup_fdre_C_CE)      -0.409    14.224    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[121]
+  -------------------------------------------------------------------
+                         required time                         14.224    
+                         arrival time                         -12.177    
+  -------------------------------------------------------------------
+                         slack                                  2.047    
+
+Slack (MET) :             2.047ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[122]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.565ns  (logic 2.806ns (37.094%)  route 4.759ns (62.906%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.056ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.418ns = ( 14.418 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.341    12.177    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[122]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.606    14.418    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[122]/C
+                         clock pessimism              0.250    14.668    
+                         clock uncertainty           -0.035    14.633    
+    SLICE_X16Y117        FDRE (Setup_fdre_C_CE)      -0.409    14.224    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[122]
+  -------------------------------------------------------------------
+                         required time                         14.224    
+                         arrival time                         -12.177    
+  -------------------------------------------------------------------
+                         slack                                  2.047    
+
+Slack (MET) :             2.047ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[123]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.565ns  (logic 2.806ns (37.094%)  route 4.759ns (62.906%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.056ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.418ns = ( 14.418 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.341    12.177    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[123]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.606    14.418    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X16Y117        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[123]/C
+                         clock pessimism              0.250    14.668    
+                         clock uncertainty           -0.035    14.633    
+    SLICE_X16Y117        FDRE (Setup_fdre_C_CE)      -0.409    14.224    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[123]
+  -------------------------------------------------------------------
+                         required time                         14.224    
+                         arrival time                         -12.177    
+  -------------------------------------------------------------------
+                         slack                                  2.047    
+
+Slack (MET) :             2.072ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.541ns  (logic 2.806ns (37.210%)  route 4.735ns (62.790%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.057ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.419ns = ( 14.419 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.317    12.153    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X16Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.607    14.419    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X16Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]/C
+                         clock pessimism              0.250    14.669    
+                         clock uncertainty           -0.035    14.634    
+    SLICE_X16Y116        FDRE (Setup_fdre_C_CE)      -0.409    14.225    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]
+  -------------------------------------------------------------------
+                         required time                         14.225    
+                         arrival time                         -12.153    
+  -------------------------------------------------------------------
+                         slack                                  2.072    
+
+Slack (MET) :             2.072ns  (required time - arrival time)
+  Source:                 u_impl/u_accumulator/bin_energy_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[113]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.541ns  (logic 2.806ns (37.210%)  route 4.735ns (62.790%))
+  Logic Levels:           16  (CARRY4=14 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.057ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.419ns = ( 14.419 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.612ns
+    Clock Pessimism Removal (CPR):    0.250ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    Y4                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.993     0.993 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     2.959    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.055 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.557     4.612    u_impl/u_accumulator/clk_IBUF_BUFG
+    SLICE_X14Y96         FDRE                                         r  u_impl/u_accumulator/bin_energy_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y96         FDRE (Prop_fdre_C_Q)         0.518     5.130 r  u_impl/u_accumulator/bin_energy_reg[16]/Q
+                         net (fo=4, routed)           1.801     6.931    u_impl/u_accumulator/bin_energy_reg[127]_0[16]
+    SLICE_X16Y104        LUT4 (Prop_lut4_I0_O)        0.124     7.055 r  u_impl/u_accumulator/is_better0_carry__1_i_8/O
+                         net (fo=1, routed)           0.000     7.055    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_1[0]
+    SLICE_X16Y104        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.587 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.587    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X16Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.701 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.701    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X16Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.815 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.815    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X16Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.929 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.929    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X16Y108        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.043 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.043    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X16Y109        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.157 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.157    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_0
+    SLICE_X16Y110        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.271 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.271    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__7_n_0
+    SLICE_X16Y111        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.385 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8/CO[3]
+                         net (fo=1, routed)           0.000     8.385    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__8_n_0
+    SLICE_X16Y112        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.499 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9/CO[3]
+                         net (fo=1, routed)           0.000     8.499    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__9_n_0
+    SLICE_X16Y113        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.613 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10/CO[3]
+                         net (fo=1, routed)           0.000     8.613    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__10_n_0
+    SLICE_X16Y114        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.727 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11/CO[3]
+                         net (fo=1, routed)           0.000     8.727    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__11_n_0
+    SLICE_X16Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.841 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12/CO[3]
+                         net (fo=1, routed)           0.000     8.841    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__12_n_0
+    SLICE_X16Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.955 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13/CO[3]
+                         net (fo=1, routed)           0.000     8.955    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__13_n_0
+    SLICE_X16Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.069 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__14/CO[3]
+                         net (fo=1, routed)           1.617    10.686    u_impl/u_accumulator/CO[0]
+    SLICE_X12Y101        LUT5 (Prop_lut5_I4_O)        0.150    10.836 r  u_impl/u_accumulator/best_energy[127]_i_1/O
+                         net (fo=251, routed)         1.317    12.153    u_impl/gen_regular_tracker.u_tracker/E[0]
+    SLICE_X16Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[113]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    Y4                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    Y4                   IBUF (Prop_ibuf_I_O)         0.859    10.859 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    12.721    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    12.812 r  clk_IBUF_BUFG_inst/O
+                         net (fo=2360, routed)        1.607    14.419    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X16Y116        FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[113]/C
+                         clock pessimism              0.250    14.669    
+                         clock uncertainty           -0.035    14.634    
+    SLICE_X16Y116        FDRE (Setup_fdre_C_CE)      -0.409    14.225    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[113]
+  -------------------------------------------------------------------
+                         required time                         14.225    
+                         arrival time                         -12.153    
+  -------------------------------------------------------------------
+                         slack                                  2.072    
+
+
+
+

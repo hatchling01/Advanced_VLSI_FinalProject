@@ -1,0 +1,40 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/bin_accumulator.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin_accumulator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/bin_accumulator_startload.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bin_accumulator_startload
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined_outreg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fanout.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined_outreg_fanout
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fast_round.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_filter_pipelined_outreg_fast_round
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/iq_mixer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module iq_mixer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lockin_pipelined_boundary_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_chunked_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_chunked_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_narrow_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_narrow_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_pipelined_fanout.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module magnitude_sq_pipelined_fanout
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nco
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker_compare_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker_compare_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker_fanout.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker_fanout
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module resonance_tracker_pipelined
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/tb/tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_accstart/vivado_sim/e62_fir29_fr_accstart_sim.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

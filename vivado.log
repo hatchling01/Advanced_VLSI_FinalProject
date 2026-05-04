@@ -1,0 +1,928 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sun May  3 23:17:29 2026
+# Process ID         : 30552
+# Current directory  : C:/Users/CHOUDN3/Downloads/VLSI_project
+# Command line       : vivado.exe -mode batch -source vivado\sweep_post_route_timing.tcl
+# Log file           : C:/Users/CHOUDN3/Downloads/VLSI_project/vivado.log
+# Journal file       : C:/Users/CHOUDN3/Downloads/VLSI_project\vivado.jou
+# Running On         : Navnil_Desktop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 9 9950X 16-Core Processor            
+# CPU Frequency      : 4292 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 66199 MB
+# Swap memory        : 127914 MB
+# Total Virtual      : 194113 MB
+# Available Virtual  : 113925 MB
+#-----------------------------------------------------------
+source {vivado\sweep_post_route_timing.tcl}
+# set script_dir [file dirname [info script]]
+# set root_dir [file normalize [file join $script_dir ..]]
+# set out_dir [file join $root_dir reports clock_sweep]
+# file mkdir $out_dir
+# cd $root_dir
+# set periods_ns {25.000 20.000 15.000 12.500 11.000 10.000 9.500 9.000 8.500 8.000 7.500}
+# set designs [list \
+#     [list baseline  [file join $root_dir reports baseline_impl lockin_baseline_routed.dcp]] \
+#     [list pipelined [file join $root_dir reports pipelined_impl lockin_pipelined_routed.dcp]] \
+#     [list pipelined_plus1 [file join $root_dir reports pipelined_plus1_impl lockin_pipelined_plus1_routed.dcp]] \
+#     [list pipelined_plus5 [file join $root_dir reports pipelined_plus5_impl lockin_pipelined_plus5_routed.dcp]] \
+#     [list pipelined_plus5_tracker [file join $root_dir reports pipelined_plus5_tracker_impl lockin_pipelined_plus5_tracker_routed.dcp]] \
+#     [list pipelined_plus5_firout [file join $root_dir reports pipelined_plus5_firout_impl lockin_pipelined_plus5_firout_routed.dcp]] \
+#     [list pipelined_plus5_firout_tracker [file join $root_dir reports pipelined_plus5_firout_tracker_impl lockin_pipelined_plus5_firout_tracker_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf [file join $root_dir reports pipelined_plus5_firout_accbuf_impl lockin_pipelined_plus5_firout_accbuf_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_magpipe [file join $root_dir reports pipelined_plus5_firout_accbuf_magpipe_impl lockin_pipelined_plus5_firout_accbuf_magpipe_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_trackercmp [file join $root_dir reports pipelined_plus5_firout_accbuf_trackercmp_impl lockin_pipelined_plus5_firout_accbuf_trackercmp_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_fanout [file join $root_dir reports pipelined_plus5_firout_accbuf_fanout_impl lockin_pipelined_plus5_firout_accbuf_fanout_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_energy64 [file join $root_dir reports pipelined_plus5_firout_accbuf_energy64_impl lockin_pipelined_plus5_firout_accbuf_energy64_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_energy62 [file join $root_dir reports pipelined_plus5_firout_accbuf_energy62_impl lockin_pipelined_plus5_firout_accbuf_energy62_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_energy62_fir29 [file join $root_dir reports e62_fir29_impl e62_fir29_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_energy62_fir29_fastround [file join $root_dir reports e62_fir29_fr_impl e62_fir29_fr_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart [file join $root_dir reports e62_fir29_fr_accstart_impl e62_fir29_fr_accstart_routed.dcp]] \
+#     [list pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart [file join $root_dir reports e62_fir29_fr_ao_accstart_impl e62_fir29_fr_ao_accstart_routed.dcp]] \
+# ]
+# proc prop_or_na {object prop_name} {
+#     if {[catch {set value [get_property $prop_name $object]}]} {
+#         return "NA"
+#     }
+#     if {$value eq ""} {
+#         return "NA"
+#     }
+#     return $value
+# }
+# proc fmt_or_na {value fmt} {
+#     if {$value eq "NA"} {
+#         return "NA"
+#     }
+#     return [format $fmt $value]
+# }
+# set csv_path [file join $out_dir post_route_clock_sweep.csv]
+# set summary_path [file join $out_dir post_route_clock_sweep_summary.txt]
+# set csv_fd [open $csv_path w]
+# set summary_fd [open $summary_path w]
+# puts $csv_fd "design,period_ns,frequency_mhz,derived_wns_ns,pass,derived_min_period_ns,derived_fmax_mhz,base_clock_period_ns,base_wns_ns,data_path_delay_ns,logic_levels,startpoint,endpoint"
+# puts $summary_fd "Post-route clock sweep derived from routed 100 MHz timing"
+# puts $summary_fd "Generated from: $root_dir"
+# puts $summary_fd ""
+# foreach design_info $designs {
+#     set design_name [lindex $design_info 0]
+#     set checkpoint_path [lindex $design_info 1]
+# 
+#     puts "Opening $design_name checkpoint: $checkpoint_path"
+#     open_checkpoint $checkpoint_path
+#     update_timing
+# 
+#     set clk_obj [get_clocks clk]
+#     set base_period [get_property PERIOD $clk_obj]
+#     set path [lindex [get_timing_paths -setup -max_paths 1 -nworst 1] 0]
+#     set base_wns [prop_or_na $path SLACK]
+#     set data_delay [prop_or_na $path DATAPATH_DELAY]
+#     set logic_levels [prop_or_na $path LOGIC_LEVELS]
+#     set startpoint [prop_or_na $path STARTPOINT_PIN]
+#     set endpoint [prop_or_na $path ENDPOINT_PIN]
+# 
+#     if {$base_wns eq "NA"} {
+#         set min_period "NA"
+#         set fmax "NA"
+#     } else {
+#         set min_period [expr {$base_period - $base_wns}]
+#         set fmax [expr {1000.0 / $min_period}]
+#     }
+# 
+#     puts $summary_fd "$design_name"
+#     puts $summary_fd "  routed checkpoint: $checkpoint_path"
+#     puts $summary_fd "  base clock period: [fmt_or_na $base_period %.3f] ns"
+#     puts $summary_fd "  base WNS: [fmt_or_na $base_wns %.3f] ns"
+#     puts $summary_fd "  derived min period: [fmt_or_na $min_period %.3f] ns"
+#     puts $summary_fd "  derived Fmax: [fmt_or_na $fmax %.3f] MHz"
+#     puts $summary_fd "  startpoint: $startpoint"
+#     puts $summary_fd "  endpoint: $endpoint"
+#     puts $summary_fd ""
+# 
+#     foreach period_ns $periods_ns {
+#         set freq_mhz [expr {1000.0 / $period_ns}]
+# 
+#         if {$min_period eq "NA"} {
+#             set derived_wns "NA"
+#             set pass "NA"
+#         } else {
+#             set derived_wns [expr {$period_ns - $min_period}]
+#             set pass [expr {$derived_wns >= 0.0 ? "PASS" : "FAIL"}]
+#         }
+# 
+#         puts $csv_fd [join [list \
+#             $design_name \
+#             [format "%.3f" $period_ns] \
+#             [format "%.3f" $freq_mhz] \
+#             [fmt_or_na $derived_wns "%.3f"] \
+#             $pass \
+#             [fmt_or_na $min_period "%.3f"] \
+#             [fmt_or_na $fmax "%.3f"] \
+#             [fmt_or_na $base_period "%.3f"] \
+#             [fmt_or_na $base_wns "%.3f"] \
+#             [fmt_or_na $data_delay "%.3f"] \
+#             $logic_levels \
+#             $startpoint \
+#             $endpoint \
+#         ] ","]
+# 
+#         puts [format "%s period=%0.3f ns freq=%0.3f MHz derived_WNS=%s pass=%s Fmax=%s MHz" \
+#             $design_name $period_ns $freq_mhz [fmt_or_na $derived_wns "%.3f"] $pass [fmt_or_na $fmax "%.3f"]]
+#     }
+# 
+#     close_design
+# }
+Opening baseline checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/baseline_impl/lockin_baseline_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/baseline_impl/lockin_baseline_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 324.742 ; gain = 5.531
+INFO: [Device 21-403] Loading part xc7a35tfgg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 742.723 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 317 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 836.887 ; gain = 0.176
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1425.359 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1425.359 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1425.359 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1425.359 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1425.359 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1425.359 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1425.359 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.147 . Memory (MB): peak = 1425.359 ; gain = 8.922
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1425.359 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1425.359 ; gain = 1114.891
+baseline period=25.000 ns freq=40.000 MHz derived_WNS=3.858 pass=PASS Fmax=47.299 MHz
+baseline period=20.000 ns freq=50.000 MHz derived_WNS=-1.142 pass=FAIL Fmax=47.299 MHz
+baseline period=15.000 ns freq=66.667 MHz derived_WNS=-6.142 pass=FAIL Fmax=47.299 MHz
+baseline period=12.500 ns freq=80.000 MHz derived_WNS=-8.642 pass=FAIL Fmax=47.299 MHz
+baseline period=11.000 ns freq=90.909 MHz derived_WNS=-10.142 pass=FAIL Fmax=47.299 MHz
+baseline period=10.000 ns freq=100.000 MHz derived_WNS=-11.142 pass=FAIL Fmax=47.299 MHz
+baseline period=9.500 ns freq=105.263 MHz derived_WNS=-11.642 pass=FAIL Fmax=47.299 MHz
+baseline period=9.000 ns freq=111.111 MHz derived_WNS=-12.142 pass=FAIL Fmax=47.299 MHz
+baseline period=8.500 ns freq=117.647 MHz derived_WNS=-12.642 pass=FAIL Fmax=47.299 MHz
+baseline period=8.000 ns freq=125.000 MHz derived_WNS=-13.142 pass=FAIL Fmax=47.299 MHz
+baseline period=7.500 ns freq=133.333 MHz derived_WNS=-13.642 pass=FAIL Fmax=47.299 MHz
+Opening pipelined checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_impl/lockin_pipelined_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_impl/lockin_pipelined_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1438.410 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1438.410 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1438.410 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.134 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.135 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1445.910 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1445.910 ; gain = 7.500
+pipelined period=25.000 ns freq=40.000 MHz derived_WNS=15.692 pass=PASS Fmax=107.434 MHz
+pipelined period=20.000 ns freq=50.000 MHz derived_WNS=10.692 pass=PASS Fmax=107.434 MHz
+pipelined period=15.000 ns freq=66.667 MHz derived_WNS=5.692 pass=PASS Fmax=107.434 MHz
+pipelined period=12.500 ns freq=80.000 MHz derived_WNS=3.192 pass=PASS Fmax=107.434 MHz
+pipelined period=11.000 ns freq=90.909 MHz derived_WNS=1.692 pass=PASS Fmax=107.434 MHz
+pipelined period=10.000 ns freq=100.000 MHz derived_WNS=0.692 pass=PASS Fmax=107.434 MHz
+pipelined period=9.500 ns freq=105.263 MHz derived_WNS=0.192 pass=PASS Fmax=107.434 MHz
+pipelined period=9.000 ns freq=111.111 MHz derived_WNS=-0.308 pass=FAIL Fmax=107.434 MHz
+pipelined period=8.500 ns freq=117.647 MHz derived_WNS=-0.808 pass=FAIL Fmax=107.434 MHz
+pipelined period=8.000 ns freq=125.000 MHz derived_WNS=-1.308 pass=FAIL Fmax=107.434 MHz
+pipelined period=7.500 ns freq=133.333 MHz derived_WNS=-1.808 pass=FAIL Fmax=107.434 MHz
+Opening pipelined_plus1 checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus1_impl/lockin_pipelined_plus1_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus1_impl/lockin_pipelined_plus1_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1445.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1445.910 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1445.910 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1455.742 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1455.742 ; gain = 9.832
+pipelined_plus1 period=25.000 ns freq=40.000 MHz derived_WNS=16.418 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=20.000 ns freq=50.000 MHz derived_WNS=11.418 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=15.000 ns freq=66.667 MHz derived_WNS=6.418 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=12.500 ns freq=80.000 MHz derived_WNS=3.918 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=11.000 ns freq=90.909 MHz derived_WNS=2.418 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=10.000 ns freq=100.000 MHz derived_WNS=1.418 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=9.500 ns freq=105.263 MHz derived_WNS=0.918 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=9.000 ns freq=111.111 MHz derived_WNS=0.418 pass=PASS Fmax=116.523 MHz
+pipelined_plus1 period=8.500 ns freq=117.647 MHz derived_WNS=-0.082 pass=FAIL Fmax=116.523 MHz
+pipelined_plus1 period=8.000 ns freq=125.000 MHz derived_WNS=-0.582 pass=FAIL Fmax=116.523 MHz
+pipelined_plus1 period=7.500 ns freq=133.333 MHz derived_WNS=-1.082 pass=FAIL Fmax=116.523 MHz
+Opening pipelined_plus5 checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_impl/lockin_pipelined_plus5_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_impl/lockin_pipelined_plus5_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1455.742 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1455.742 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1455.742 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.115 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1467.844 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1467.844 ; gain = 12.102
+pipelined_plus5 period=25.000 ns freq=40.000 MHz derived_WNS=16.854 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=20.000 ns freq=50.000 MHz derived_WNS=11.854 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=15.000 ns freq=66.667 MHz derived_WNS=6.854 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=12.500 ns freq=80.000 MHz derived_WNS=4.354 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=11.000 ns freq=90.909 MHz derived_WNS=2.854 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=10.000 ns freq=100.000 MHz derived_WNS=1.854 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=9.500 ns freq=105.263 MHz derived_WNS=1.354 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=9.000 ns freq=111.111 MHz derived_WNS=0.854 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=8.500 ns freq=117.647 MHz derived_WNS=0.354 pass=PASS Fmax=122.760 MHz
+pipelined_plus5 period=8.000 ns freq=125.000 MHz derived_WNS=-0.146 pass=FAIL Fmax=122.760 MHz
+pipelined_plus5 period=7.500 ns freq=133.333 MHz derived_WNS=-0.646 pass=FAIL Fmax=122.760 MHz
+Opening pipelined_plus5_tracker checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_tracker_impl/lockin_pipelined_plus5_tracker_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_tracker_impl/lockin_pipelined_plus5_tracker_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1467.844 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1467.844 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1467.844 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1473.734 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1473.734 ; gain = 5.891
+pipelined_plus5_tracker period=25.000 ns freq=40.000 MHz derived_WNS=16.676 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=20.000 ns freq=50.000 MHz derived_WNS=11.676 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=15.000 ns freq=66.667 MHz derived_WNS=6.676 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=12.500 ns freq=80.000 MHz derived_WNS=4.176 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=11.000 ns freq=90.909 MHz derived_WNS=2.676 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=10.000 ns freq=100.000 MHz derived_WNS=1.676 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=9.500 ns freq=105.263 MHz derived_WNS=1.176 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=9.000 ns freq=111.111 MHz derived_WNS=0.676 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=8.500 ns freq=117.647 MHz derived_WNS=0.176 pass=PASS Fmax=120.135 MHz
+pipelined_plus5_tracker period=8.000 ns freq=125.000 MHz derived_WNS=-0.324 pass=FAIL Fmax=120.135 MHz
+pipelined_plus5_tracker period=7.500 ns freq=133.333 MHz derived_WNS=-0.824 pass=FAIL Fmax=120.135 MHz
+Opening pipelined_plus5_firout checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_impl/lockin_pipelined_plus5_firout_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_impl/lockin_pipelined_plus5_firout_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1473.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1473.734 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1473.734 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.116 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1478.211 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1478.211 ; gain = 4.477
+pipelined_plus5_firout period=25.000 ns freq=40.000 MHz derived_WNS=17.002 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=20.000 ns freq=50.000 MHz derived_WNS=12.002 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=15.000 ns freq=66.667 MHz derived_WNS=7.002 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=12.500 ns freq=80.000 MHz derived_WNS=4.502 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=11.000 ns freq=90.909 MHz derived_WNS=3.002 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=10.000 ns freq=100.000 MHz derived_WNS=2.002 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=9.500 ns freq=105.263 MHz derived_WNS=1.502 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=9.000 ns freq=111.111 MHz derived_WNS=1.002 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=8.500 ns freq=117.647 MHz derived_WNS=0.502 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=8.000 ns freq=125.000 MHz derived_WNS=0.002 pass=PASS Fmax=125.031 MHz
+pipelined_plus5_firout period=7.500 ns freq=133.333 MHz derived_WNS=-0.498 pass=FAIL Fmax=125.031 MHz
+Opening pipelined_plus5_firout_tracker checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_tracker_impl/lockin_pipelined_plus5_firout_tracker_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_tracker_impl/lockin_pipelined_plus5_firout_tracker_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1478.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1478.211 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1478.211 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.715 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1485.715 ; gain = 7.504
+pipelined_plus5_firout_tracker period=25.000 ns freq=40.000 MHz derived_WNS=16.675 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=20.000 ns freq=50.000 MHz derived_WNS=11.675 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=15.000 ns freq=66.667 MHz derived_WNS=6.675 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=12.500 ns freq=80.000 MHz derived_WNS=4.175 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=11.000 ns freq=90.909 MHz derived_WNS=2.675 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=10.000 ns freq=100.000 MHz derived_WNS=1.675 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=9.500 ns freq=105.263 MHz derived_WNS=1.175 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=9.000 ns freq=111.111 MHz derived_WNS=0.675 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=8.500 ns freq=117.647 MHz derived_WNS=0.175 pass=PASS Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=8.000 ns freq=125.000 MHz derived_WNS=-0.325 pass=FAIL Fmax=120.120 MHz
+pipelined_plus5_firout_tracker period=7.500 ns freq=133.333 MHz derived_WNS=-0.825 pass=FAIL Fmax=120.120 MHz
+Opening pipelined_plus5_firout_accbuf checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_impl/lockin_pipelined_plus5_firout_accbuf_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_impl/lockin_pipelined_plus5_firout_accbuf_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1485.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1485.715 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1485.715 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1493.273 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1493.273 ; gain = 7.559
+pipelined_plus5_firout_accbuf period=25.000 ns freq=40.000 MHz derived_WNS=17.254 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=20.000 ns freq=50.000 MHz derived_WNS=12.254 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=15.000 ns freq=66.667 MHz derived_WNS=7.254 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=12.500 ns freq=80.000 MHz derived_WNS=4.754 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=11.000 ns freq=90.909 MHz derived_WNS=3.254 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=10.000 ns freq=100.000 MHz derived_WNS=2.254 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=9.500 ns freq=105.263 MHz derived_WNS=1.754 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=9.000 ns freq=111.111 MHz derived_WNS=1.254 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=8.500 ns freq=117.647 MHz derived_WNS=0.754 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=8.000 ns freq=125.000 MHz derived_WNS=0.254 pass=PASS Fmax=129.099 MHz
+pipelined_plus5_firout_accbuf period=7.500 ns freq=133.333 MHz derived_WNS=-0.246 pass=FAIL Fmax=129.099 MHz
+Opening pipelined_plus5_firout_accbuf_magpipe checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_magpipe_impl/lockin_pipelined_plus5_firout_accbuf_magpipe_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_magpipe_impl/lockin_pipelined_plus5_firout_accbuf_magpipe_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1493.273 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1493.273 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 471 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1493.273 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.144 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.144 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1523.703 ; gain = 30.430
+pipelined_plus5_firout_accbuf_magpipe period=25.000 ns freq=40.000 MHz derived_WNS=17.156 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=20.000 ns freq=50.000 MHz derived_WNS=12.156 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=15.000 ns freq=66.667 MHz derived_WNS=7.156 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=12.500 ns freq=80.000 MHz derived_WNS=4.656 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=11.000 ns freq=90.909 MHz derived_WNS=3.156 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=10.000 ns freq=100.000 MHz derived_WNS=2.156 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=9.500 ns freq=105.263 MHz derived_WNS=1.656 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=9.000 ns freq=111.111 MHz derived_WNS=1.156 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=8.500 ns freq=117.647 MHz derived_WNS=0.656 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=8.000 ns freq=125.000 MHz derived_WNS=0.156 pass=PASS Fmax=127.486 MHz
+pipelined_plus5_firout_accbuf_magpipe period=7.500 ns freq=133.333 MHz derived_WNS=-0.344 pass=FAIL Fmax=127.486 MHz
+Opening pipelined_plus5_firout_accbuf_trackercmp checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_trackercmp_impl/lockin_pipelined_plus5_firout_accbuf_trackercmp_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_trackercmp_impl/lockin_pipelined_plus5_firout_accbuf_trackercmp_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.133 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.133 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1523.703 ; gain = 0.000
+pipelined_plus5_firout_accbuf_trackercmp period=25.000 ns freq=40.000 MHz derived_WNS=16.872 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=20.000 ns freq=50.000 MHz derived_WNS=11.872 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=15.000 ns freq=66.667 MHz derived_WNS=6.872 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=12.500 ns freq=80.000 MHz derived_WNS=4.372 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=11.000 ns freq=90.909 MHz derived_WNS=2.872 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=10.000 ns freq=100.000 MHz derived_WNS=1.872 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=9.500 ns freq=105.263 MHz derived_WNS=1.372 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=9.000 ns freq=111.111 MHz derived_WNS=0.872 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=8.500 ns freq=117.647 MHz derived_WNS=0.372 pass=PASS Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=8.000 ns freq=125.000 MHz derived_WNS=-0.128 pass=FAIL Fmax=123.031 MHz
+pipelined_plus5_firout_accbuf_trackercmp period=7.500 ns freq=133.333 MHz derived_WNS=-0.628 pass=FAIL Fmax=123.031 MHz
+Opening pipelined_plus5_firout_accbuf_fanout checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_fanout_impl/lockin_pipelined_plus5_firout_accbuf_fanout_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_fanout_impl/lockin_pipelined_plus5_firout_accbuf_fanout_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1523.703 ; gain = 0.000
+pipelined_plus5_firout_accbuf_fanout period=25.000 ns freq=40.000 MHz derived_WNS=17.136 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=20.000 ns freq=50.000 MHz derived_WNS=12.136 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=15.000 ns freq=66.667 MHz derived_WNS=7.136 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=12.500 ns freq=80.000 MHz derived_WNS=4.636 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=11.000 ns freq=90.909 MHz derived_WNS=3.136 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=10.000 ns freq=100.000 MHz derived_WNS=2.136 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=9.500 ns freq=105.263 MHz derived_WNS=1.636 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=9.000 ns freq=111.111 MHz derived_WNS=1.136 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=8.500 ns freq=117.647 MHz derived_WNS=0.636 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=8.000 ns freq=125.000 MHz derived_WNS=0.136 pass=PASS Fmax=127.162 MHz
+pipelined_plus5_firout_accbuf_fanout period=7.500 ns freq=133.333 MHz derived_WNS=-0.364 pass=FAIL Fmax=127.162 MHz
+Opening pipelined_plus5_firout_accbuf_energy64 checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_energy64_impl/lockin_pipelined_plus5_firout_accbuf_energy64_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_energy64_impl/lockin_pipelined_plus5_firout_accbuf_energy64_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 380 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.096 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1523.703 ; gain = 0.000
+pipelined_plus5_firout_accbuf_energy64 period=25.000 ns freq=40.000 MHz derived_WNS=17.548 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=20.000 ns freq=50.000 MHz derived_WNS=12.548 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=15.000 ns freq=66.667 MHz derived_WNS=7.548 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=12.500 ns freq=80.000 MHz derived_WNS=5.048 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=11.000 ns freq=90.909 MHz derived_WNS=3.548 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=10.000 ns freq=100.000 MHz derived_WNS=2.548 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=9.500 ns freq=105.263 MHz derived_WNS=2.048 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=9.000 ns freq=111.111 MHz derived_WNS=1.548 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=8.500 ns freq=117.647 MHz derived_WNS=1.048 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=8.000 ns freq=125.000 MHz derived_WNS=0.548 pass=PASS Fmax=134.192 MHz
+pipelined_plus5_firout_accbuf_energy64 period=7.500 ns freq=133.333 MHz derived_WNS=0.048 pass=PASS Fmax=134.192 MHz
+Opening pipelined_plus5_firout_accbuf_energy62 checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_energy62_impl/lockin_pipelined_plus5_firout_accbuf_energy62_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_energy62_impl/lockin_pipelined_plus5_firout_accbuf_energy62_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1523.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 380 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1523.703 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.108 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1530.766 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1530.766 ; gain = 7.062
+pipelined_plus5_firout_accbuf_energy62 period=25.000 ns freq=40.000 MHz derived_WNS=17.549 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=20.000 ns freq=50.000 MHz derived_WNS=12.549 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=15.000 ns freq=66.667 MHz derived_WNS=7.549 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=12.500 ns freq=80.000 MHz derived_WNS=5.049 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=11.000 ns freq=90.909 MHz derived_WNS=3.549 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=10.000 ns freq=100.000 MHz derived_WNS=2.549 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=9.500 ns freq=105.263 MHz derived_WNS=2.049 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=9.000 ns freq=111.111 MHz derived_WNS=1.549 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=8.500 ns freq=117.647 MHz derived_WNS=1.049 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=8.000 ns freq=125.000 MHz derived_WNS=0.549 pass=PASS Fmax=134.210 MHz
+pipelined_plus5_firout_accbuf_energy62 period=7.500 ns freq=133.333 MHz derived_WNS=0.049 pass=PASS Fmax=134.210 MHz
+Opening pipelined_plus5_firout_accbuf_energy62_fir29 checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_impl/e62_fir29_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_impl/e62_fir29_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1530.766 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1530.766 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 347 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1530.766 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1540.918 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1540.918 ; gain = 10.152
+pipelined_plus5_firout_accbuf_energy62_fir29 period=25.000 ns freq=40.000 MHz derived_WNS=17.994 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=20.000 ns freq=50.000 MHz derived_WNS=12.994 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=15.000 ns freq=66.667 MHz derived_WNS=7.994 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=12.500 ns freq=80.000 MHz derived_WNS=5.494 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=11.000 ns freq=90.909 MHz derived_WNS=3.994 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=10.000 ns freq=100.000 MHz derived_WNS=2.994 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=9.500 ns freq=105.263 MHz derived_WNS=2.494 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=9.000 ns freq=111.111 MHz derived_WNS=1.994 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=8.500 ns freq=117.647 MHz derived_WNS=1.494 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=8.000 ns freq=125.000 MHz derived_WNS=0.994 pass=PASS Fmax=142.735 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29 period=7.500 ns freq=133.333 MHz derived_WNS=0.494 pass=PASS Fmax=142.735 MHz
+Opening pipelined_plus5_firout_accbuf_energy62_fir29_fastround checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_impl/e62_fir29_fr_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_impl/e62_fir29_fr_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1540.918 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1540.918 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 319 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1540.918 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1547.637 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=25.000 ns freq=40.000 MHz derived_WNS=18.885 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=20.000 ns freq=50.000 MHz derived_WNS=13.885 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=15.000 ns freq=66.667 MHz derived_WNS=8.885 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=12.500 ns freq=80.000 MHz derived_WNS=6.385 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=11.000 ns freq=90.909 MHz derived_WNS=4.885 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=10.000 ns freq=100.000 MHz derived_WNS=3.885 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=9.500 ns freq=105.263 MHz derived_WNS=3.385 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=9.000 ns freq=111.111 MHz derived_WNS=2.885 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=8.500 ns freq=117.647 MHz derived_WNS=2.385 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=8.000 ns freq=125.000 MHz derived_WNS=1.885 pass=PASS Fmax=163.532 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround period=7.500 ns freq=133.333 MHz derived_WNS=1.385 pass=PASS Fmax=163.532 MHz
+Opening pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_accstart_impl/e62_fir29_fr_accstart_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_accstart_impl/e62_fir29_fr_accstart_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.637 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1547.637 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 329 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1547.637 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1554.371 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=25.000 ns freq=40.000 MHz derived_WNS=16.465 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=20.000 ns freq=50.000 MHz derived_WNS=11.465 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=15.000 ns freq=66.667 MHz derived_WNS=6.465 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=12.500 ns freq=80.000 MHz derived_WNS=3.965 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=11.000 ns freq=90.909 MHz derived_WNS=2.465 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=10.000 ns freq=100.000 MHz derived_WNS=1.465 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=9.500 ns freq=105.263 MHz derived_WNS=0.965 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=9.000 ns freq=111.111 MHz derived_WNS=0.465 pass=PASS Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=8.500 ns freq=117.647 MHz derived_WNS=-0.035 pass=FAIL Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=8.000 ns freq=125.000 MHz derived_WNS=-0.535 pass=FAIL Fmax=117.165 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart period=7.500 ns freq=133.333 MHz derived_WNS=-1.035 pass=FAIL Fmax=117.165 MHz
+Opening pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/e62_fir29_fr_ao_accstart_routed.dcp
+Command: open_checkpoint C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/e62_fir29_fr_ao_accstart_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1554.371 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1554.371 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 329 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1554.371 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1562.598 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1562.598 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1562.598 ; gain = 8.227
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=25.000 ns freq=40.000 MHz derived_WNS=19.091 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=20.000 ns freq=50.000 MHz derived_WNS=14.091 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=15.000 ns freq=66.667 MHz derived_WNS=9.091 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=12.500 ns freq=80.000 MHz derived_WNS=6.591 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=11.000 ns freq=90.909 MHz derived_WNS=5.091 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=10.000 ns freq=100.000 MHz derived_WNS=4.091 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=9.500 ns freq=105.263 MHz derived_WNS=3.591 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=9.000 ns freq=111.111 MHz derived_WNS=3.091 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=8.500 ns freq=117.647 MHz derived_WNS=2.591 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=8.000 ns freq=125.000 MHz derived_WNS=2.091 pass=PASS Fmax=169.233 MHz
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart period=7.500 ns freq=133.333 MHz derived_WNS=1.591 pass=PASS Fmax=169.233 MHz
+# close $csv_fd
+# close $summary_fd
+# puts "Clock sweep CSV written to $csv_path"
+Clock sweep CSV written to C:/Users/CHOUDN3/Downloads/VLSI_project/reports/clock_sweep/post_route_clock_sweep.csv
+# puts "Clock sweep summary written to $summary_path"
+Clock sweep summary written to C:/Users/CHOUDN3/Downloads/VLSI_project/reports/clock_sweep/post_route_clock_sweep_summary.txt
+INFO: [Common 17-206] Exiting Vivado at Sun May  3 23:19:22 2026...

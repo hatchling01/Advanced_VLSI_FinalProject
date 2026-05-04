@@ -1,0 +1,832 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun May  3 23:16:46 2026
+| Host         : Navnil_Desktop running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 10 -file C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/post_route_critical_paths.rpt
+| Design       : lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top
+| Device       : 7a35t-fgg484
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             4.091ns  (required time - arrival time)
+  Source:                 u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_narrow_mag.u_mag/mag_sq_reg[57]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.821ns  (logic 3.387ns (58.187%)  route 2.434ns (41.813%))
+  Logic Levels:           14  (CARRY4=12 LUT2=2)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.233ns = ( 14.233 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.682ns
+    Clock Pessimism Removal (CPR):    0.334ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.645     4.682    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    DSP48_X0Y21          DSP48E1                                      r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y21          DSP48E1 (Prop_dsp48e1_CLK_P[1])
+                                                      0.434     5.116 r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/P[1]
+                         net (fo=2, routed)           1.679     6.795    u_impl/gen_narrow_mag.u_mag/p_1_in[18]
+    SLICE_X12Y45         LUT2 (Prop_lut2_I0_O)        0.124     6.919 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2/O
+                         net (fo=1, routed)           0.000     6.919    u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2_n_0
+    SLICE_X12Y45         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380     7.299 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.299    u_impl/gen_narrow_mag.u_mag/i_square0_carry_n_0
+    SLICE_X12Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.416 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.416    u_impl/gen_narrow_mag.u_mag/i_square0_carry__0_n_0
+    SLICE_X12Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.533 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.533    u_impl/gen_narrow_mag.u_mag/i_square0_carry__1_n_0
+    SLICE_X12Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.650 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.650    u_impl/gen_narrow_mag.u_mag/i_square0_carry__2_n_0
+    SLICE_X12Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.767 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__3/CO[3]
+                         net (fo=1, routed)           0.001     7.768    u_impl/gen_narrow_mag.u_mag/i_square0_carry__3_n_0
+    SLICE_X12Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.885 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.885    u_impl/gen_narrow_mag.u_mag/i_square0_carry__4_n_0
+    SLICE_X12Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.002 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.002    u_impl/gen_narrow_mag.u_mag/i_square0_carry__5_n_0
+    SLICE_X12Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.119 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.119    u_impl/gen_narrow_mag.u_mag/i_square0_carry__6_n_0
+    SLICE_X12Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.236 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.236    u_impl/gen_narrow_mag.u_mag/i_square0_carry__7_n_0
+    SLICE_X12Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     8.559 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__8/O[1]
+                         net (fo=2, routed)           0.754     9.313    u_impl/gen_narrow_mag.u_mag/i_square_reg__1[53]
+    SLICE_X11Y54         LUT2 (Prop_lut2_I0_O)        0.306     9.619 r  u_impl/gen_narrow_mag.u_mag/mag_sq[55]_i_4/O
+                         net (fo=1, routed)           0.000     9.619    u_impl/gen_narrow_mag.u_mag/mag_sq[55]_i_4_n_0
+    SLICE_X11Y54         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    10.169 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    10.169    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1_n_0
+    SLICE_X11Y55         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    10.503 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[58]_i_1/O[1]
+                         net (fo=1, routed)           0.000    10.503    u_impl/gen_narrow_mag.u_mag/mag_resized[57]
+    SLICE_X11Y55         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[57]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.438    14.233    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    SLICE_X11Y55         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[57]/C
+                         clock pessimism              0.334    14.568    
+                         clock uncertainty           -0.035    14.533    
+    SLICE_X11Y55         FDRE (Setup_fdre_C_D)        0.062    14.595    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[57]
+  -------------------------------------------------------------------
+                         required time                         14.595    
+                         arrival time                         -10.503    
+  -------------------------------------------------------------------
+                         slack                                  4.091    
+
+Slack (MET) :             4.181ns  (required time - arrival time)
+  Source:                 u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_narrow_mag.u_mag/mag_sq_reg[58]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.715ns  (logic 3.281ns (57.412%)  route 2.434ns (42.588%))
+  Logic Levels:           14  (CARRY4=12 LUT2=2)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.233ns = ( 14.233 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.682ns
+    Clock Pessimism Removal (CPR):    0.334ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.645     4.682    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    DSP48_X0Y21          DSP48E1                                      r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y21          DSP48E1 (Prop_dsp48e1_CLK_P[1])
+                                                      0.434     5.116 r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/P[1]
+                         net (fo=2, routed)           1.679     6.795    u_impl/gen_narrow_mag.u_mag/p_1_in[18]
+    SLICE_X12Y45         LUT2 (Prop_lut2_I0_O)        0.124     6.919 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2/O
+                         net (fo=1, routed)           0.000     6.919    u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2_n_0
+    SLICE_X12Y45         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380     7.299 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.299    u_impl/gen_narrow_mag.u_mag/i_square0_carry_n_0
+    SLICE_X12Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.416 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.416    u_impl/gen_narrow_mag.u_mag/i_square0_carry__0_n_0
+    SLICE_X12Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.533 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.533    u_impl/gen_narrow_mag.u_mag/i_square0_carry__1_n_0
+    SLICE_X12Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.650 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.650    u_impl/gen_narrow_mag.u_mag/i_square0_carry__2_n_0
+    SLICE_X12Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.767 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__3/CO[3]
+                         net (fo=1, routed)           0.001     7.768    u_impl/gen_narrow_mag.u_mag/i_square0_carry__3_n_0
+    SLICE_X12Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.885 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.885    u_impl/gen_narrow_mag.u_mag/i_square0_carry__4_n_0
+    SLICE_X12Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.002 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.002    u_impl/gen_narrow_mag.u_mag/i_square0_carry__5_n_0
+    SLICE_X12Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.119 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.119    u_impl/gen_narrow_mag.u_mag/i_square0_carry__6_n_0
+    SLICE_X12Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.236 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.236    u_impl/gen_narrow_mag.u_mag/i_square0_carry__7_n_0
+    SLICE_X12Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     8.559 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__8/O[1]
+                         net (fo=2, routed)           0.754     9.313    u_impl/gen_narrow_mag.u_mag/i_square_reg__1[53]
+    SLICE_X11Y54         LUT2 (Prop_lut2_I0_O)        0.306     9.619 r  u_impl/gen_narrow_mag.u_mag/mag_sq[55]_i_4/O
+                         net (fo=1, routed)           0.000     9.619    u_impl/gen_narrow_mag.u_mag/mag_sq[55]_i_4_n_0
+    SLICE_X11Y54         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    10.169 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    10.169    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1_n_0
+    SLICE_X11Y55         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228    10.397 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[58]_i_1/CO[2]
+                         net (fo=1, routed)           0.000    10.397    u_impl/gen_narrow_mag.u_mag/mag_resized[58]
+    SLICE_X11Y55         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[58]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.438    14.233    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    SLICE_X11Y55         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[58]/C
+                         clock pessimism              0.334    14.568    
+                         clock uncertainty           -0.035    14.533    
+    SLICE_X11Y55         FDRE (Setup_fdre_C_D)        0.046    14.579    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[58]
+  -------------------------------------------------------------------
+                         required time                         14.579    
+                         arrival time                         -10.397    
+  -------------------------------------------------------------------
+                         slack                                  4.181    
+
+Slack (MET) :             4.202ns  (required time - arrival time)
+  Source:                 u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_narrow_mag.u_mag/mag_sq_reg[56]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.710ns  (logic 3.276ns (57.375%)  route 2.434ns (42.625%))
+  Logic Levels:           14  (CARRY4=12 LUT2=2)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.233ns = ( 14.233 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.682ns
+    Clock Pessimism Removal (CPR):    0.334ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.645     4.682    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    DSP48_X0Y21          DSP48E1                                      r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y21          DSP48E1 (Prop_dsp48e1_CLK_P[1])
+                                                      0.434     5.116 r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/P[1]
+                         net (fo=2, routed)           1.679     6.795    u_impl/gen_narrow_mag.u_mag/p_1_in[18]
+    SLICE_X12Y45         LUT2 (Prop_lut2_I0_O)        0.124     6.919 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2/O
+                         net (fo=1, routed)           0.000     6.919    u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2_n_0
+    SLICE_X12Y45         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380     7.299 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.299    u_impl/gen_narrow_mag.u_mag/i_square0_carry_n_0
+    SLICE_X12Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.416 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.416    u_impl/gen_narrow_mag.u_mag/i_square0_carry__0_n_0
+    SLICE_X12Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.533 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.533    u_impl/gen_narrow_mag.u_mag/i_square0_carry__1_n_0
+    SLICE_X12Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.650 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.650    u_impl/gen_narrow_mag.u_mag/i_square0_carry__2_n_0
+    SLICE_X12Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.767 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__3/CO[3]
+                         net (fo=1, routed)           0.001     7.768    u_impl/gen_narrow_mag.u_mag/i_square0_carry__3_n_0
+    SLICE_X12Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.885 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.885    u_impl/gen_narrow_mag.u_mag/i_square0_carry__4_n_0
+    SLICE_X12Y51         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.002 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.002    u_impl/gen_narrow_mag.u_mag/i_square0_carry__5_n_0
+    SLICE_X12Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.119 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__6/CO[3]
+                         net (fo=1, routed)           0.000     8.119    u_impl/gen_narrow_mag.u_mag/i_square0_carry__6_n_0
+    SLICE_X12Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.236 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__7/CO[3]
+                         net (fo=1, routed)           0.000     8.236    u_impl/gen_narrow_mag.u_mag/i_square0_carry__7_n_0
+    SLICE_X12Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     8.559 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__8/O[1]
+                         net (fo=2, routed)           0.754     9.313    u_impl/gen_narrow_mag.u_mag/i_square_reg__1[53]
+    SLICE_X11Y54         LUT2 (Prop_lut2_I0_O)        0.306     9.619 r  u_impl/gen_narrow_mag.u_mag/mag_sq[55]_i_4/O
+                         net (fo=1, routed)           0.000     9.619    u_impl/gen_narrow_mag.u_mag/mag_sq[55]_i_4_n_0
+    SLICE_X11Y54         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    10.169 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    10.169    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1_n_0
+    SLICE_X11Y55         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223    10.392 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[58]_i_1/O[0]
+                         net (fo=1, routed)           0.000    10.392    u_impl/gen_narrow_mag.u_mag/mag_resized[56]
+    SLICE_X11Y55         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[56]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.438    14.233    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    SLICE_X11Y55         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[56]/C
+                         clock pessimism              0.334    14.568    
+                         clock uncertainty           -0.035    14.533    
+    SLICE_X11Y55         FDRE (Setup_fdre_C_D)        0.062    14.595    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[56]
+  -------------------------------------------------------------------
+                         required time                         14.595    
+                         arrival time                         -10.392    
+  -------------------------------------------------------------------
+                         slack                                  4.202    
+
+Slack (MET) :             4.206ns  (required time - arrival time)
+  Source:                 u_impl/gen_narrow_mag.u_mag/i_square0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_narrow_mag.u_mag/i_square_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.505ns  (logic 4.009ns (72.818%)  route 1.496ns (27.182%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.190ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.250ns = ( 14.250 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.682ns
+    Clock Pessimism Removal (CPR):    0.242ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.645     4.682    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    DSP48_X0Y22          DSP48E1                                      r  u_impl/gen_narrow_mag.u_mag/i_square0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y22          DSP48E1 (Prop_dsp48e1_CLK_P[5])
+                                                      4.009     8.691 r  u_impl/gen_narrow_mag.u_mag/i_square0/P[5]
+                         net (fo=1, routed)           1.496    10.188    u_impl/gen_narrow_mag.u_mag/i_square0_n_100
+    SLICE_X12Y47         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/i_square_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.454    14.250    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    SLICE_X12Y47         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/i_square_reg[5]/C
+                         clock pessimism              0.242    14.492    
+                         clock uncertainty           -0.035    14.457    
+    SLICE_X12Y47         FDRE (Setup_fdre_C_D)       -0.063    14.394    u_impl/gen_narrow_mag.u_mag/i_square_reg[5]
+  -------------------------------------------------------------------
+                         required time                         14.394    
+                         arrival time                         -10.188    
+  -------------------------------------------------------------------
+                         slack                                  4.206    
+
+Slack (MET) :             4.208ns  (required time - arrival time)
+  Source:                 u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_narrow_mag.u_mag/mag_sq_reg[53]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.705ns  (logic 3.264ns (57.217%)  route 2.441ns (42.783%))
+  Logic Levels:           13  (CARRY4=11 LUT2=2)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.233ns = ( 14.233 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.682ns
+    Clock Pessimism Removal (CPR):    0.334ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.645     4.682    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    DSP48_X0Y21          DSP48E1                                      r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y21          DSP48E1 (Prop_dsp48e1_CLK_P[1])
+                                                      0.434     5.116 r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/P[1]
+                         net (fo=2, routed)           1.679     6.795    u_impl/gen_narrow_mag.u_mag/p_1_in[18]
+    SLICE_X12Y45         LUT2 (Prop_lut2_I0_O)        0.124     6.919 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2/O
+                         net (fo=1, routed)           0.000     6.919    u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2_n_0
+    SLICE_X12Y45         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380     7.299 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.299    u_impl/gen_narrow_mag.u_mag/i_square0_carry_n_0
+    SLICE_X12Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.416 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.416    u_impl/gen_narrow_mag.u_mag/i_square0_carry__0_n_0
+    SLICE_X12Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.533 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.533    u_impl/gen_narrow_mag.u_mag/i_square0_carry__1_n_0
+    SLICE_X12Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.650 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.650    u_impl/gen_narrow_mag.u_mag/i_square0_carry__2_n_0
+    SLICE_X12Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.767 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__3/CO[3]
+                         net (fo=1, routed)           0.001     7.768    u_impl/gen_narrow_mag.u_mag/i_square0_carry__3_n_0
+    SLICE_X12Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.885 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.885    u_impl/gen_narrow_mag.u_mag/i_square0_carry__4_n_0
+    SLICE_X12Y51         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     8.208 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__5/O[1]
+                         net (fo=2, routed)           0.761     8.969    u_impl/gen_narrow_mag.u_mag/i_square_reg__1[41]
+    SLICE_X11Y51         LUT2 (Prop_lut2_I0_O)        0.306     9.275 r  u_impl/gen_narrow_mag.u_mag/mag_sq[43]_i_4/O
+                         net (fo=1, routed)           0.000     9.275    u_impl/gen_narrow_mag.u_mag/mag_sq[43]_i_4_n_0
+    SLICE_X11Y51         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.825 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[43]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.825    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[43]_i_1_n_0
+    SLICE_X11Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.939 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[47]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.939    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[47]_i_1_n_0
+    SLICE_X11Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.053 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[51]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    10.053    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[51]_i_1_n_0
+    SLICE_X11Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    10.387 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1/O[1]
+                         net (fo=1, routed)           0.000    10.387    u_impl/gen_narrow_mag.u_mag/mag_resized[53]
+    SLICE_X11Y54         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[53]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.438    14.233    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    SLICE_X11Y54         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[53]/C
+                         clock pessimism              0.334    14.568    
+                         clock uncertainty           -0.035    14.533    
+    SLICE_X11Y54         FDRE (Setup_fdre_C_D)        0.062    14.595    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[53]
+  -------------------------------------------------------------------
+                         required time                         14.595    
+                         arrival time                         -10.387    
+  -------------------------------------------------------------------
+                         slack                                  4.208    
+
+Slack (MET) :             4.229ns  (required time - arrival time)
+  Source:                 u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.684ns  (logic 3.243ns (57.059%)  route 2.441ns (42.941%))
+  Logic Levels:           13  (CARRY4=11 LUT2=2)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.233ns = ( 14.233 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.682ns
+    Clock Pessimism Removal (CPR):    0.334ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.645     4.682    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    DSP48_X0Y21          DSP48E1                                      r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y21          DSP48E1 (Prop_dsp48e1_CLK_P[1])
+                                                      0.434     5.116 r  u_impl/gen_narrow_mag.u_mag/i_square_reg__0/P[1]
+                         net (fo=2, routed)           1.679     6.795    u_impl/gen_narrow_mag.u_mag/p_1_in[18]
+    SLICE_X12Y45         LUT2 (Prop_lut2_I0_O)        0.124     6.919 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2/O
+                         net (fo=1, routed)           0.000     6.919    u_impl/gen_narrow_mag.u_mag/i_square0_carry_i_2_n_0
+    SLICE_X12Y45         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380     7.299 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.299    u_impl/gen_narrow_mag.u_mag/i_square0_carry_n_0
+    SLICE_X12Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.416 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.416    u_impl/gen_narrow_mag.u_mag/i_square0_carry__0_n_0
+    SLICE_X12Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.533 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.533    u_impl/gen_narrow_mag.u_mag/i_square0_carry__1_n_0
+    SLICE_X12Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.650 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.650    u_impl/gen_narrow_mag.u_mag/i_square0_carry__2_n_0
+    SLICE_X12Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.767 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__3/CO[3]
+                         net (fo=1, routed)           0.001     7.768    u_impl/gen_narrow_mag.u_mag/i_square0_carry__3_n_0
+    SLICE_X12Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.885 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.885    u_impl/gen_narrow_mag.u_mag/i_square0_carry__4_n_0
+    SLICE_X12Y51         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     8.208 r  u_impl/gen_narrow_mag.u_mag/i_square0_carry__5/O[1]
+                         net (fo=2, routed)           0.761     8.969    u_impl/gen_narrow_mag.u_mag/i_square_reg__1[41]
+    SLICE_X11Y51         LUT2 (Prop_lut2_I0_O)        0.306     9.275 r  u_impl/gen_narrow_mag.u_mag/mag_sq[43]_i_4/O
+                         net (fo=1, routed)           0.000     9.275    u_impl/gen_narrow_mag.u_mag/mag_sq[43]_i_4_n_0
+    SLICE_X11Y51         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.825 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[43]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.825    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[43]_i_1_n_0
+    SLICE_X11Y52         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.939 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[47]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     9.939    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[47]_i_1_n_0
+    SLICE_X11Y53         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    10.053 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[51]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    10.053    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[51]_i_1_n_0
+    SLICE_X11Y54         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    10.366 r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]_i_1/O[3]
+                         net (fo=1, routed)           0.000    10.366    u_impl/gen_narrow_mag.u_mag/mag_resized[55]
+    SLICE_X11Y54         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.438    14.233    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    SLICE_X11Y54         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]/C
+                         clock pessimism              0.334    14.568    
+                         clock uncertainty           -0.035    14.533    
+    SLICE_X11Y54         FDRE (Setup_fdre_C_D)        0.062    14.595    u_impl/gen_narrow_mag.u_mag/mag_sq_reg[55]
+  -------------------------------------------------------------------
+                         required time                         14.595    
+                         arrival time                         -10.366    
+  -------------------------------------------------------------------
+                         slack                                  4.229    
+
+Slack (MET) :             4.285ns  (required time - arrival time)
+  Source:                 u_impl/gen_narrow_mag.u_mag/i_square0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_narrow_mag.u_mag/i_square_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.418ns  (logic 4.009ns (73.990%)  route 1.409ns (26.010%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.189ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.251ns = ( 14.251 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.682ns
+    Clock Pessimism Removal (CPR):    0.242ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.645     4.682    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    DSP48_X0Y22          DSP48E1                                      r  u_impl/gen_narrow_mag.u_mag/i_square0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y22          DSP48E1 (Prop_dsp48e1_CLK_P[13])
+                                                      4.009     8.691 r  u_impl/gen_narrow_mag.u_mag/i_square0/P[13]
+                         net (fo=1, routed)           1.409    10.101    u_impl/gen_narrow_mag.u_mag/i_square0_n_92
+    SLICE_X10Y48         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/i_square_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.455    14.251    u_impl/gen_narrow_mag.u_mag/clk_IBUF_BUFG
+    SLICE_X10Y48         FDRE                                         r  u_impl/gen_narrow_mag.u_mag/i_square_reg[13]/C
+                         clock pessimism              0.242    14.493    
+                         clock uncertainty           -0.035    14.458    
+    SLICE_X10Y48         FDRE (Setup_fdre_C_D)       -0.072    14.386    u_impl/gen_narrow_mag.u_mag/i_square_reg[13]
+  -------------------------------------------------------------------
+                         required time                         14.386    
+                         arrival time                         -10.101    
+  -------------------------------------------------------------------
+                         slack                                  4.285    
+
+Slack (MET) :             4.296ns  (required time - arrival time)
+  Source:                 u_impl/bin_energy_buf_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[52]_lopt_replica/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.330ns  (logic 2.354ns (44.168%)  route 2.976ns (55.832%))
+  Logic Levels:           10  (CARRY4=8 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.300ns = ( 14.300 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.676ns
+    Clock Pessimism Removal (CPR):    0.242ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.638     4.676    u_impl/clk_IBUF_BUFG
+    SLICE_X3Y40          FDRE                                         r  u_impl/bin_energy_buf_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y40          FDRE (Prop_fdre_C_Q)         0.456     5.132 r  u_impl/bin_energy_buf_reg[2]/Q
+                         net (fo=4, routed)           1.534     6.666    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[61]_0[2]
+    SLICE_X6Y39          LUT4 (Prop_lut4_I0_O)        0.124     6.790 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry_i_7/O
+                         net (fo=1, routed)           0.000     6.790    u_impl/gen_regular_tracker.u_tracker/is_better0_carry_i_7_n_0
+    SLICE_X6Y39          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.323 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.323    u_impl/gen_regular_tracker.u_tracker/is_better0_carry_n_0
+    SLICE_X6Y40          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.440 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.440    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__0_n_0
+    SLICE_X6Y41          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.557 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.557    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X6Y42          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.674 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.674    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X6Y43          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.791 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.791    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X6Y44          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.908 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.908    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X6Y45          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.025 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.025    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X6Y46          CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229     8.254 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[2]
+                         net (fo=1, routed)           0.571     8.825    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_1
+    SLICE_X5Y46          LUT5 (Prop_lut5_I4_O)        0.310     9.135 r  u_impl/gen_regular_tracker.u_tracker/best_energy[61]_i_1/O
+                         net (fo=121, routed)         0.871    10.006    u_impl/gen_regular_tracker.u_tracker/best_energy[61]_i_1_n_0
+    SLICE_X4Y51          FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[52]_lopt_replica/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.505    14.300    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X4Y51          FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[52]_lopt_replica/C
+                         clock pessimism              0.242    14.543    
+                         clock uncertainty           -0.035    14.507    
+    SLICE_X4Y51          FDRE (Setup_fdre_C_CE)      -0.205    14.302    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[52]_lopt_replica
+  -------------------------------------------------------------------
+                         required time                         14.302    
+                         arrival time                         -10.006    
+  -------------------------------------------------------------------
+                         slack                                  4.296    
+
+Slack (MET) :             4.296ns  (required time - arrival time)
+  Source:                 u_impl/bin_energy_buf_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[54]_lopt_replica/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.330ns  (logic 2.354ns (44.168%)  route 2.976ns (55.832%))
+  Logic Levels:           10  (CARRY4=8 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.300ns = ( 14.300 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.676ns
+    Clock Pessimism Removal (CPR):    0.242ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.638     4.676    u_impl/clk_IBUF_BUFG
+    SLICE_X3Y40          FDRE                                         r  u_impl/bin_energy_buf_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y40          FDRE (Prop_fdre_C_Q)         0.456     5.132 r  u_impl/bin_energy_buf_reg[2]/Q
+                         net (fo=4, routed)           1.534     6.666    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[61]_0[2]
+    SLICE_X6Y39          LUT4 (Prop_lut4_I0_O)        0.124     6.790 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry_i_7/O
+                         net (fo=1, routed)           0.000     6.790    u_impl/gen_regular_tracker.u_tracker/is_better0_carry_i_7_n_0
+    SLICE_X6Y39          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.323 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.323    u_impl/gen_regular_tracker.u_tracker/is_better0_carry_n_0
+    SLICE_X6Y40          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.440 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.440    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__0_n_0
+    SLICE_X6Y41          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.557 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.557    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X6Y42          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.674 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.674    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X6Y43          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.791 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.791    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X6Y44          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.908 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.908    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X6Y45          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.025 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.025    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X6Y46          CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229     8.254 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[2]
+                         net (fo=1, routed)           0.571     8.825    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_1
+    SLICE_X5Y46          LUT5 (Prop_lut5_I4_O)        0.310     9.135 r  u_impl/gen_regular_tracker.u_tracker/best_energy[61]_i_1/O
+                         net (fo=121, routed)         0.871    10.006    u_impl/gen_regular_tracker.u_tracker/best_energy[61]_i_1_n_0
+    SLICE_X4Y51          FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[54]_lopt_replica/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.505    14.300    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X4Y51          FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[54]_lopt_replica/C
+                         clock pessimism              0.242    14.543    
+                         clock uncertainty           -0.035    14.507    
+    SLICE_X4Y51          FDRE (Setup_fdre_C_CE)      -0.205    14.302    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[54]_lopt_replica
+  -------------------------------------------------------------------
+                         required time                         14.302    
+                         arrival time                         -10.006    
+  -------------------------------------------------------------------
+                         slack                                  4.296    
+
+Slack (MET) :             4.296ns  (required time - arrival time)
+  Source:                 u_impl/bin_energy_buf_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_impl/gen_regular_tracker.u_tracker/best_energy_reg[55]_lopt_replica/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.330ns  (logic 2.354ns (44.168%)  route 2.976ns (55.832%))
+  Logic Levels:           10  (CARRY4=8 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.300ns = ( 14.300 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.676ns
+    Clock Pessimism Removal (CPR):    0.242ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    J20                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.970     0.970 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     2.942    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.038 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.638     4.676    u_impl/clk_IBUF_BUFG
+    SLICE_X3Y40          FDRE                                         r  u_impl/bin_energy_buf_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y40          FDRE (Prop_fdre_C_Q)         0.456     5.132 r  u_impl/bin_energy_buf_reg[2]/Q
+                         net (fo=4, routed)           1.534     6.666    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[61]_0[2]
+    SLICE_X6Y39          LUT4 (Prop_lut4_I0_O)        0.124     6.790 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry_i_7/O
+                         net (fo=1, routed)           0.000     6.790    u_impl/gen_regular_tracker.u_tracker/is_better0_carry_i_7_n_0
+    SLICE_X6Y39          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.323 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.323    u_impl/gen_regular_tracker.u_tracker/is_better0_carry_n_0
+    SLICE_X6Y40          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.440 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.440    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__0_n_0
+    SLICE_X6Y41          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.557 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.557    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__1_n_0
+    SLICE_X6Y42          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.674 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.674    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__2_n_0
+    SLICE_X6Y43          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.791 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.791    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__3_n_0
+    SLICE_X6Y44          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.908 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.908    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__4_n_0
+    SLICE_X6Y45          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.025 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.025    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__5_n_0
+    SLICE_X6Y46          CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229     8.254 r  u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6/CO[2]
+                         net (fo=1, routed)           0.571     8.825    u_impl/gen_regular_tracker.u_tracker/is_better0_carry__6_n_1
+    SLICE_X5Y46          LUT5 (Prop_lut5_I4_O)        0.310     9.135 r  u_impl/gen_regular_tracker.u_tracker/best_energy[61]_i_1/O
+                         net (fo=121, routed)         0.871    10.006    u_impl/gen_regular_tracker.u_tracker/best_energy[61]_i_1_n_0
+    SLICE_X4Y51          FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[55]_lopt_replica/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    J20                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    J20                  IBUF (Prop_ibuf_I_O)         0.837    10.837 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.868    12.705    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.796 r  clk_IBUF_BUFG_inst/O
+                         net (fo=1906, routed)        1.505    14.300    u_impl/gen_regular_tracker.u_tracker/clk_IBUF_BUFG
+    SLICE_X4Y51          FDRE                                         r  u_impl/gen_regular_tracker.u_tracker/best_energy_reg[55]_lopt_replica/C
+                         clock pessimism              0.242    14.543    
+                         clock uncertainty           -0.035    14.507    
+    SLICE_X4Y51          FDRE (Setup_fdre_C_CE)      -0.205    14.302    u_impl/gen_regular_tracker.u_tracker/best_energy_reg[55]_lopt_replica
+  -------------------------------------------------------------------
+                         required time                         14.302    
+                         arrival time                         -10.006    
+  -------------------------------------------------------------------
+                         slack                                  4.296    
+
+
+
+

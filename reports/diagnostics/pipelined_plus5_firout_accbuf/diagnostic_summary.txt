@@ -1,0 +1,12 @@
+Diagnostic pass for pipelined_plus5_firout_accbuf
+Checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_impl/lockin_pipelined_plus5_firout_accbuf_routed.dcp
+Generated reports:
+  timing_summary_deep.rpt
+  top20_setup_paths.rpt
+  top10_setup_paths_full_clock.rpt
+  top20_setup_paths.csv
+  top20_region_summary.csv
+  high_fanout_nets.rpt
+  control_net_fanout.csv
+  utilization_snapshot.rpt
+  power_snapshot.rpt

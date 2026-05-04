@@ -1,0 +1,4 @@
+Expected bin: 3
+Detected bin: 3
+Best energy:  2926974856033640715
+PASS

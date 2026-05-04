@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="640" viewBox="0 0 1080 640">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="540" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#1f2937">Plus5 vs Plus5 Tracker Pipeline</text>
+<text x="540" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#475569">Post-route results from the routed 100 MHz implementations</text>
+
+<line x1="105" y1="490" x2="1010" y2="490" stroke="#2e3440" stroke-width="1.5"/>
+<line x1="105" y1="100" x2="105" y2="490" stroke="#2e3440" stroke-width="1.5"/>
+<line x1="105" y1="425" x2="1010" y2="425" stroke="#d7dde8" stroke-width="1"/>
+<line x1="105" y1="360" x2="1010" y2="360" stroke="#d7dde8" stroke-width="1"/>
+<line x1="105" y1="295" x2="1010" y2="295" stroke="#d7dde8" stroke-width="1"/>
+<line x1="105" y1="230" x2="1010" y2="230" stroke="#d7dde8" stroke-width="1"/>
+<line x1="105" y1="165" x2="1010" y2="165" stroke="#d7dde8" stroke-width="1"/>
+<line x1="105" y1="100" x2="1010" y2="100" stroke="#d7dde8" stroke-width="1"/>
+
+<text x="540" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937">Metric normalized within each pair</text>
+<text x="30" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" transform="rotate(-90 30 295)">Relative value</text>
+
+<rect x="175" y="166.0" width="70" height="324.0" rx="4" fill="#d62728"/>
+<rect x="250" y="172.9" width="70" height="317.1" rx="4" fill="#9467bd"/>
+<text x="210" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">122.760</text>
+<text x="285" y="161" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">120.135</text>
+<text x="248" y="518" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">Fmax MHz</text>
+
+<rect x="395" y="184.7" width="70" height="305.3" rx="4" fill="#d62728"/>
+<rect x="470" y="166.0" width="70" height="324.0" rx="4" fill="#9467bd"/>
+<text x="430" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">16</text>
+<text x="505" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">17</text>
+<text x="468" y="518" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">Latency cycles</text>
+
+<rect x="615" y="186.2" width="70" height="303.8" rx="4" fill="#d62728"/>
+<rect x="690" y="166.0" width="70" height="324.0" rx="4" fill="#9467bd"/>
+<text x="650" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">2131</text>
+<text x="725" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">2273</text>
+<text x="688" y="518" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">FFs</text>
+
+<rect x="835" y="170.1" width="70" height="319.9" rx="4" fill="#d62728"/>
+<rect x="910" y="166.0" width="70" height="324.0" rx="4" fill="#9467bd"/>
+<text x="870" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">0.078</text>
+<text x="945" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">0.079</text>
+<text x="908" y="518" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">Dynamic W</text>
+
+<rect x="340" y="575" width="16" height="16" fill="#d62728"/>
+<text x="365" y="588" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">Pipelined plus5</text>
+<rect x="515" y="575" width="16" height="16" fill="#9467bd"/>
+<text x="540" y="588" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">Pipelined plus5 tracker</text>
+
+<text x="540" y="615" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#475569">Tracker pipelining is functionally correct, but lowers Fmax and adds latency/register cost in this implementation.</text>
+</svg>

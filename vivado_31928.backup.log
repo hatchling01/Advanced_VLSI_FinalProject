@@ -1,0 +1,1207 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sun May  3 23:15:45 2026
+# Process ID         : 31928
+# Current directory  : C:/Users/CHOUDN3/Downloads/VLSI_project
+# Command line       : vivado.exe -mode batch -source vivado\impl_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.tcl
+# Log file           : C:/Users/CHOUDN3/Downloads/VLSI_project/vivado.log
+# Journal file       : C:/Users/CHOUDN3/Downloads/VLSI_project\vivado.jou
+# Running On         : Navnil_Desktop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 9 9950X 16-Core Processor            
+# CPU Frequency      : 4292 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 66199 MB
+# Swap memory        : 127914 MB
+# Total Virtual      : 194113 MB
+# Available Virtual  : 114264 MB
+#-----------------------------------------------------------
+source {vivado\impl_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart.tcl}
+# set script_dir [file dirname [info script]]
+# set root_dir [file normalize [file join $script_dir ..]]
+# set out_dir [file join $root_dir reports e62_fir29_fr_ao_accstart_impl]
+# set part_name xc7a35tfgg484-1
+# file mkdir $out_dir
+# cd $root_dir
+# create_project -force e62_fir29_fr_ao_accstart_impl [file join $out_dir vivado_impl] -part $part_name
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/vivado_impl'
+# read_verilog -sv [list \
+#     [file join $root_dir rtl nco.sv] \
+#     [file join $root_dir rtl iq_mixer.sv] \
+#     [file join $root_dir rtl fir_filter.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg_fanout.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg_fast_round.sv] \
+#     [file join $root_dir rtl fir_filter_pipelined_outreg_fast_round_alwayson.sv] \
+#     [file join $root_dir rtl magnitude_sq.sv] \
+#     [file join $root_dir rtl magnitude_sq_pipelined.sv] \
+#     [file join $root_dir rtl magnitude_sq_pipelined_fanout.sv] \
+#     [file join $root_dir rtl magnitude_sq_chunked_pipeline.sv] \
+#     [file join $root_dir rtl magnitude_sq_narrow_pipelined.sv] \
+#     [file join $root_dir rtl bin_accumulator.sv] \
+#     [file join $root_dir rtl bin_accumulator_startload.sv] \
+#     [file join $root_dir rtl resonance_tracker.sv] \
+#     [file join $root_dir rtl resonance_tracker_pipelined.sv] \
+#     [file join $root_dir rtl resonance_tracker_compare_pipeline.sv] \
+#     [file join $root_dir rtl resonance_tracker_fanout.sv] \
+#     [file join $root_dir rtl lockin_pipelined_boundary_top.sv] \
+#     [file join $root_dir rtl lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.sv] \
+# ]
+# read_xdc [file join $root_dir vivado constraints.xdc]
+# synth_design -top lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top -part $part_name
+Command: synth_design -top lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top -part xc7a35tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tfgg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 45524
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1260.961 ; gain = 540.480
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'lockin_pipelined_boundary_top' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv:3]
+	Parameter SAMPLE_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter REF_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter PHASE_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter ROM_ADDR_BITS bound to: 32'sb00000000000000000000000000001000 
+	Parameter NUM_BINS bound to: 32'sb00000000000000000000000000001000 
+	Parameter SAMPLES_PER_BIN bound to: 32'sb00000000000000000000000001000000 
+	Parameter BIN_WIDTH bound to: 32'sb00000000000000000000000000000011 
+	Parameter MIX_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter FIR_OUT_WIDTH bound to: 32'sb00000000000000000000000000011101 
+	Parameter ENERGY_WIDTH bound to: 32'sb00000000000000000000000000111110 
+	Parameter BOUNDARY_STAGES bound to: 32'sb00000000000000000000000000000101 
+	Parameter FIR_OUTPUT_PIPELINE bound to: 1'b1 
+	Parameter FIR_FAST_ROUND bound to: 1'b1 
+	Parameter FIR_ALWAYS_ON bound to: 1'b1 
+	Parameter MAG_CHUNKED_PIPELINE bound to: 1'b0 
+	Parameter MAG_NARROW_PIPELINE bound to: 1'b1 
+	Parameter MAG_ENERGY_SHIFT bound to: 32'sb00000000000000000000000000000000 
+	Parameter ACCUMULATOR_START_LOAD bound to: 1'b1 
+	Parameter ACCUMULATOR_OUTPUT_PIPELINE bound to: 1'b1 
+	Parameter TRACKER_PIPELINE bound to: 1'b0 
+	Parameter TRACKER_COMPARE_PIPELINE bound to: 1'b0 
+	Parameter CONTROL_FANOUT_HINTS bound to: 1'b0 
+	Parameter SIN_MEM bound to: vectors/sin_rom.mem - type: string 
+	Parameter COS_MEM bound to: vectors/cos_rom.mem - type: string 
+INFO: [Synth 8-6157] synthesizing module 'fir_filter_pipelined_outreg_fast_round_alwayson' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fast_round_alwayson.sv:3]
+	Parameter IN_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter OUT_WIDTH bound to: 32'sb00000000000000000000000000011101 
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter_pipelined_outreg_fast_round_alwayson' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fast_round_alwayson.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'magnitude_sq_narrow_pipelined' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_narrow_pipelined.sv:3]
+	Parameter IN_WIDTH bound to: 32'sb00000000000000000000000000011101 
+	Parameter OUT_WIDTH bound to: 32'sb00000000000000000000000000111110 
+	Parameter ENERGY_SHIFT bound to: 32'sb00000000000000000000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'magnitude_sq_narrow_pipelined' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq_narrow_pipelined.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'bin_accumulator_startload' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/bin_accumulator_startload.sv:3]
+	Parameter BIN_WIDTH bound to: 32'sb00000000000000000000000000000011 
+	Parameter ENERGY_WIDTH bound to: 32'sb00000000000000000000000000111110 
+INFO: [Synth 8-6155] done synthesizing module 'bin_accumulator_startload' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/bin_accumulator_startload.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'resonance_tracker' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker.sv:3]
+	Parameter NUM_BINS bound to: 32'sb00000000000000000000000000001000 
+	Parameter BIN_WIDTH bound to: 32'sb00000000000000000000000000000011 
+	Parameter ENERGY_WIDTH bound to: 32'sb00000000000000000000000000111110 
+	Parameter DIP_MODE bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'resonance_tracker' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker.sv:3]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv:135]
+INFO: [Synth 8-226] default block is never used [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv:135]
+INFO: [Synth 8-6157] synthesizing module 'nco' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv:3]
+	Parameter PHASE_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter ADDR_BITS bound to: 32'sb00000000000000000000000000001000 
+	Parameter REF_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter SIN_MEM bound to: vectors/sin_rom.mem - type: string 
+	Parameter COS_MEM bound to: vectors/cos_rom.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'vectors/sin_rom.mem' is read successfully [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv:29]
+INFO: [Synth 8-3876] $readmem data file 'vectors/cos_rom.mem' is read successfully [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'nco' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'iq_mixer' [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/iq_mixer.sv:3]
+	Parameter SAMPLE_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter REF_WIDTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter MIX_WIDTH bound to: 32'sb00000000000000000000000000100000 
+INFO: [Synth 8-6155] done synthesizing module 'iq_mixer' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/iq_mixer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'lockin_pipelined_boundary_top' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top' (0#1) [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.sv:3]
+WARNING: [Synth 8-6014] Unused sequential element delay_line_reg[7] was removed.  [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter_pipelined_outreg_fast_round_alwayson.sv:73]
+WARNING: [Synth 8-6014] Unused sequential element bin_mag_p3_reg was removed.  [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv:552]
+WARNING: [Synth 8-6014] Unused sequential element start_mag_p3_reg was removed.  [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv:555]
+WARNING: [Synth 8-6014] Unused sequential element end_mag_p3_reg was removed.  [C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_pipelined_boundary_top.sv:558]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1383.938 ; gain = 663.457
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1383.938 ; gain = 663.457
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1383.938 ; gain = 663.457
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1383.938 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/CHOUDN3/Downloads/VLSI_project/vivado/constraints.xdc]
+Finished Parsing XDC File [C:/Users/CHOUDN3/Downloads/VLSI_project/vivado/constraints.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1468.242 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1468.242 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1468.242 ; gain = 747.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1468.242 ; gain = 747.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1468.242 ; gain = 747.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1468.242 ; gain = 747.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   62 Bit       Adders := 1     
+	   2 Input   59 Bit       Adders := 1     
+	   2 Input   58 Bit       Adders := 2     
+	   2 Input   56 Bit       Adders := 20    
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               62 Bit    Registers := 4     
+	               56 Bit    Registers := 28    
+	               48 Bit    Registers := 6     
+	               32 Bit    Registers := 19    
+	               29 Bit    Registers := 14    
+	               18 Bit    Registers := 6     
+	               16 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 19    
+	                1 Bit    Registers := 58    
++---Muxes : 
+	   3 Input   62 Bit        Muxes := 1     
+	   2 Input   62 Bit        Muxes := 1     
+	   8 Input   30 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP q_square0, operation Mode is: A2*B.
+DSP Report: register q_square0 is absorbed into DSP q_square0.
+DSP Report: operator q_square0 is absorbed into DSP q_square0.
+DSP Report: operator q_square0 is absorbed into DSP q_square0.
+DSP Report: Generating DSP q_square_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register q_square_reg is absorbed into DSP q_square_reg.
+DSP Report: operator q_square0 is absorbed into DSP q_square_reg.
+DSP Report: operator q_square0 is absorbed into DSP q_square_reg.
+DSP Report: Generating DSP q_square0, operation Mode is: A2*B2.
+DSP Report: register q_square0 is absorbed into DSP q_square0.
+DSP Report: register q_square0 is absorbed into DSP q_square0.
+DSP Report: operator q_square0 is absorbed into DSP q_square0.
+DSP Report: operator q_square0 is absorbed into DSP q_square0.
+DSP Report: Generating DSP q_square_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register q_square_reg is absorbed into DSP q_square_reg.
+DSP Report: register q_square_reg is absorbed into DSP q_square_reg.
+DSP Report: operator q_square0 is absorbed into DSP q_square_reg.
+DSP Report: operator q_square0 is absorbed into DSP q_square_reg.
+DSP Report: Generating DSP i_square0, operation Mode is: A2*B.
+DSP Report: register i_square0 is absorbed into DSP i_square0.
+DSP Report: operator i_square0 is absorbed into DSP i_square0.
+DSP Report: operator i_square0 is absorbed into DSP i_square0.
+DSP Report: Generating DSP i_square_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register i_square_reg is absorbed into DSP i_square_reg.
+DSP Report: operator i_square0 is absorbed into DSP i_square_reg.
+DSP Report: operator i_square0 is absorbed into DSP i_square_reg.
+DSP Report: Generating DSP i_square0, operation Mode is: A2*B2.
+DSP Report: register i_square0 is absorbed into DSP i_square0.
+DSP Report: register i_square0 is absorbed into DSP i_square0.
+DSP Report: operator i_square0 is absorbed into DSP i_square0.
+DSP Report: operator i_square0 is absorbed into DSP i_square0.
+DSP Report: Generating DSP i_square_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register i_square_reg is absorbed into DSP i_square_reg.
+DSP Report: register i_square_reg is absorbed into DSP i_square_reg.
+DSP Report: operator i_square0 is absorbed into DSP i_square_reg.
+DSP Report: operator i_square0 is absorbed into DSP i_square_reg.
+DSP Report: Generating DSP i_mixed_s2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register cos_s1_reg is absorbed into DSP i_mixed_s2_reg.
+DSP Report: register sample_s1_reg is absorbed into DSP i_mixed_s2_reg.
+DSP Report: register i_mixed_s2_reg is absorbed into DSP i_mixed_s2_reg.
+DSP Report: operator u_mixer/i_mixed is absorbed into DSP i_mixed_s2_reg.
+DSP Report: Generating DSP q_mixed_s2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register sin_s1_reg is absorbed into DSP q_mixed_s2_reg.
+DSP Report: register sample_s1_reg is absorbed into DSP q_mixed_s2_reg.
+DSP Report: register q_mixed_s2_reg is absorbed into DSP q_mixed_s2_reg.
+DSP Report: operator u_mixer/q_mixed is absorbed into DSP q_mixed_s2_reg.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[47]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[46]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[45]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[44]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[43]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[42]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[41]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[40]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[39]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[38]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[37]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[36]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[35]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[34]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[33]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[32]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[31]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[30]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[29]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[28]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[27]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[26]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[25]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[24]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[23]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[22]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[21]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[20]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[19]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[18]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[17]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[47]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[46]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[45]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[44]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[43]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[42]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[41]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[40]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[39]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[38]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[37]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[36]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[35]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[34]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[33]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[32]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[31]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[30]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[29]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[28]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[27]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[26]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[25]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[24]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[23]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[22]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[21]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[20]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[19]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[18]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/q_square_reg[17]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[47]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[46]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[45]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[44]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[43]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[42]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[41]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[40]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[39]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[38]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[37]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[36]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[35]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[34]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[33]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[32]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[31]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[30]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[29]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[28]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[27]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[26]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[25]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[24]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[23]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[22]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[21]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[20]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[19]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[18]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[17]) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[47]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[46]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[45]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[44]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[43]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[42]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+WARNING: [Synth 8-3332] Sequential element (u_impl/gen_narrow_mag.u_mag/i_square_reg[41]__0) is unused and will be removed from module lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1468.242 ; gain = 747.762
+---------------------------------------------------------------------------------
+ Sort Area is  i_square0_0 : 0 0 : 2737 4449 : Used 1 time 0
+ Sort Area is  i_square0_0 : 0 1 : 1712 4449 : Used 1 time 0
+ Sort Area is  q_square0_6 : 0 0 : 2737 4449 : Used 1 time 0
+ Sort Area is  q_square0_6 : 0 1 : 1712 4449 : Used 1 time 0
+ Sort Area is  i_square0_3 : 0 0 : 1662 2913 : Used 1 time 0
+ Sort Area is  i_square0_3 : 0 1 : 1251 2913 : Used 1 time 0
+ Sort Area is  q_square0_7 : 0 0 : 1662 2913 : Used 1 time 0
+ Sort Area is  q_square0_7 : 0 1 : 1251 2913 : Used 1 time 0
+ Sort Area is  i_mixed_s2_reg_8 : 0 0 : 2001 2001 : Used 1 time 0
+ Sort Area is  q_mixed_s2_reg_a : 0 0 : 2001 2001 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|nco         | sin_rom    | 256x16        | LUT            | 
+|nco         | cos_rom    | 256x16        | LUT            | 
+|nco         | p_0_out    | 256x16        | LUT            | 
+|nco         | p_0_out    | 256x16        | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                   | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|magnitude_sq_narrow_pipelined | A2*B            | 18     | 12     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17)+A*B  | 12     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|magnitude_sq_narrow_pipelined | A2*B2           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17)+A2*B | 18     | 12     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|magnitude_sq_narrow_pipelined | A2*B            | 18     | 12     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17)+A*B  | 12     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|magnitude_sq_narrow_pipelined | A2*B2           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17)+A2*B | 18     | 12     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|lockin_pipelined_boundary_top | (A2*B2)'        | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|lockin_pipelined_boundary_top | (A2*B2)'        | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
++------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1632.227 ; gain = 911.746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1642.289 ; gain = 921.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1660.711 ; gain = 940.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------------------------------------------------------------------------------+------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                                                                         | RTL Name                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------------------------------------------------------------------------------+------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top | u_impl/bin_s4_reg[2]         | 15     | 3     | YES          | NO                 | YES               | 3      | 0       | 
+|lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top | u_impl/start_s4_reg          | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top | u_impl/end_s4_reg            | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top | u_impl/valid_boundary_reg[4] | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top | u_impl/i_boundary_reg[4][28] | 6      | 29    | YES          | NO                 | YES               | 29     | 0       | 
+|lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top | u_impl/q_boundary_reg[4][28] | 6      | 29    | YES          | NO                 | YES               | 29     | 0       | 
+|lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart_top | u_impl/valid_s3_reg          | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------------------------------------------------------------------------------+------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                   | DSP Mapping         | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|lockin_pipelined_boundary_top | ((A'*B')')'         | 30     | 18     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|lockin_pipelined_boundary_top | ((A'*B')')'         | 30     | 18     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|magnitude_sq_narrow_pipelined | A''*B''             | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17+A''*B'')' | 30     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 1    | 
+|magnitude_sq_narrow_pipelined | A''*B''             | 17     | 17     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17+A''*B'')' | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 1    | 
+|magnitude_sq_narrow_pipelined | A''*B''             | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17+A''*B'')' | 30     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 1    | 
+|magnitude_sq_narrow_pipelined | A''*B''             | 17     | 17     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 0    | 
+|magnitude_sq_narrow_pipelined | (PCIN>>17+A''*B'')' | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 0    | 1    | 
++------------------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   319|
+|3     |DSP48E1 |    10|
+|6     |LUT1    |    11|
+|7     |LUT2    |  1129|
+|8     |LUT3    |   122|
+|9     |LUT4    |    67|
+|10    |LUT5    |    14|
+|11    |LUT6    |    34|
+|12    |SRL16E  |    65|
+|13    |FDRE    |  1775|
+|14    |IBUF    |    19|
+|15    |OBUF    |    66|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 124 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1903.598 ; gain = 1098.812
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1903.598 ; gain = 1183.117
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1912.781 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 329 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/CHOUDN3/Downloads/VLSI_project/vivado/constraints.xdc]
+Finished Parsing XDC File [C:/Users/CHOUDN3/Downloads/VLSI_project/vivado/constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1916.500 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 65d9373c
+INFO: [Common 17-83] Releasing license: Synthesis
+35 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1916.500 ; gain = 1386.289
+# report_timing_summary -file [file join $out_dir post_synth_timing_summary.rpt]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+# report_utilization -file [file join $out_dir post_synth_utilization.rpt]
+# report_power -file [file join $out_dir post_synth_power.rpt]
+Command: report_power -file C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/post_synth_power.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.336 . Memory (MB): peak = 1916.500 ; gain = 0.000
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1916.500 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 1 Initialization | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.3 Timing Data Collection
+Phase 2.3 Timing Data Collection | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 2587f9041
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Retarget | Checksum: 2587f9041
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 292b73619
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Constant propagation | Checksum: 292b73619
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 5 Sweep | Checksum: 2ebf738b9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.158 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Sweep | Checksum: 2ebf738b9
+INFO: [Opt 31-389] Phase Sweep created 56 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 2ebf738b9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.185 . Memory (MB): peak = 2025.211 ; gain = 0.000
+BUFG optimization | Checksum: 2ebf738b9
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2ebf738b9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.190 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Shift Register Optimization | Checksum: 2ebf738b9
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 27f7d1dfb
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.196 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Post Processing Netlist | Checksum: 27f7d1dfb
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 248ca1f4b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.304 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 248ca1f4b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.312 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 9 Finalization | Checksum: 248ca1f4b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.313 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |              56  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 248ca1f4b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.315 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 248ca1f4b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 248ca1f4b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2025.211 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+19 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 19c5f202e
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 148b93821
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.467 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1f1391151
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1f1391151
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1f1391151
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 15557321b
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 240578035
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 240578035
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 2016ec5b9
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 2016ec5b9
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 62 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 30 nets or LUTs. Breaked 0 LUT, combined 30 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |             30  |                    30  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |             30  |                    30  |           0  |           4  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 2ad046112
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 2.5 Global Place Phase2 | Checksum: 33f36a89d
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 33f36a89d
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 2e0a4d198
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 28dc370fe
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 28c24caba
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 21720cb05
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 3299a89f6
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 2d3af8c4b
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 2a8a4e7a8
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 2a8a4e7a8
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 26575eb09
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=4.333 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1fc2e1c55
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 2025.211 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 2b45ac700
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 26575eb09
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=4.333. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 2bf37e9eb
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 2bf37e9eb
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 2bf37e9eb
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 2bf37e9eb
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 2bf37e9eb
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 212dc70ed
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Ending Placer Task | Checksum: 15b944ee5
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2025.211 ; gain = 0.000
+29 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2025.211 ; gain = 0.000
+# phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.212 . Memory (MB): peak = 2025.211 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 4.333 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 7531717a ConstDB: 0 ShapeSum: 45e18114 RouteDB: a0815c57
+Post Restoration Checksum: NetGraph: b31d19cf | NumContArr: 81a9613a | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2ba187043
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2ba187043
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2ba187043
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 2025.211 ; gain = 0.000
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 2bc57ce6b
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 2025.211 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.240  | TNS=0.000  | WHS=-0.134 | THS=-10.893|
+
+
+Phase 2.4 Soft Constraint Pins - Fast Budgeting
+Phase 2.4 Soft Constraint Pins - Fast Budgeting | Checksum: 324d9da3d
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 2844
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 2844
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 2d6845244
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 2d6845244
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 284d45190
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 4 Initial Routing | Checksum: 284d45190
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 19
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.998  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 2a57cdc32
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 5 Rip-up And Reroute | Checksum: 2a57cdc32
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 23a80e3dd
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.091  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 6.1 Delay CleanUp | Checksum: 23a80e3dd
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 23a80e3dd
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 6 Delay and Skew Optimization | Checksum: 23a80e3dd
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.091  | TNS=0.000  | WHS=0.026  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 1f8349a3e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Phase 7 Post Hold Fix | Checksum: 1f8349a3e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.827473 %
+  Global Horizontal Routing Utilization  = 0.830427 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 1f8349a3e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 1f8349a3e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 1ec246a56
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 1ec246a56
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Phase 12 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=4.091  | TNS=0.000  | WHS=0.026  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 12 Post Router Timing | Checksum: 1ec246a56
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Total Elapsed time in route_design: 13.337 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: 14fc7e90b
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 14fc7e90b
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+10 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2025.211 ; gain = 0.000
+# report_timing_summary -file [file join $out_dir post_route_timing_summary.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+# report_timing -max_paths 10 -file [file join $out_dir post_route_critical_paths.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+# report_utilization -file [file join $out_dir post_route_utilization.rpt]
+# report_power -file [file join $out_dir post_route_power.rpt]
+Command: report_power -file C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/post_route_power.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+# report_clock_utilization -file [file join $out_dir post_route_clock_utilization.rpt]
+# report_high_fanout_nets -fanout_greater_than 20 -max_nets 50 -file [file join $out_dir post_route_high_fanout_nets.rpt]
+# write_checkpoint -force [file join $out_dir e62_fir29_fr_ao_accstart_routed.dcp]
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2025.211 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 2025.211 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/e62_fir29_fr_ao_accstart_routed.dcp' has been generated.
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Sun May  3 23:16:47 2026...

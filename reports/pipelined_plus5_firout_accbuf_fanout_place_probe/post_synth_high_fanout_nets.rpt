@@ -1,0 +1,72 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun May  3 20:31:49 2026
+| Host         : Navnil_Desktop running 64-bit major release  (build 9200)
+| Command      : report_high_fanout_nets -fanout_greater_than 20 -max_nets 50 -file C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_fanout_place_probe/post_synth_high_fanout_nets.rpt
+| Design       : lockin_pipelined_plus5_firout_accbuf_fanout_top
+| Device       : xc7a35t
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++--------------------------------------------------------------+--------+-------------+
+| Net Name                                                     | Fanout | Driver Type |
++--------------------------------------------------------------+--------+-------------+
+| rst_IBUF                                                     |   2089 | IBUF        |
+| u_impl/gen_regular_mag_fanout.u_mag/E[0]                     |    132 | LUT2        |
+| u_impl/gen_regular_tracker_fanout.u_tracker/is_better_n_0    |    131 | LUT5        |
+| u_impl/gen_regular_mag_fanout.u_mag/valid_out_reg_rep__0_0   |    128 | LUT3        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/valid_p2                |    113 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/valid_p2                |    113 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/valid_p1_reg_rep_n_0    |    101 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/valid_p1                |    101 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/valid_p1                |    101 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/valid_p1_reg_rep_n_0    |    101 | FDRE        |
+| u_impl/gen_regular_mag_fanout.u_mag/valid_p2                 |    100 | FDRE        |
+| u_impl/bin_fir_p2_reg_r_n_0                                  |     99 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/p_0_in                  |     98 | LUT1        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/valid_inst_rep_n_0      |     98 | LUT1        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/valid_inst_rep__0_n_0   |     98 | LUT1        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/p_0_in                  |     98 | LUT1        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/valid_inst_rep__3_n_0   |     98 | LUT1        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/valid_inst_rep__4_n_0   |     98 | LUT1        |
+| u_impl/gen_regular_mag_fanout.u_mag/valid_p1                 |     75 | FDRE        |
+| u_impl/gen_regular_mag_fanout.u_mag/valid_out                |     64 | FDRE        |
+| u_impl/gen_regular_mag_fanout.u_mag/valid_out_reg_rep_0      |     64 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/valid_p3                |     54 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/valid_p3                |     54 | FDRE        |
+| u_impl/term0[52]                                             |     50 | DSP48E1     |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/term51[32]              |     50 | FDRE        |
+| u_impl/term0_0[52]                                           |     50 | DSP48E1     |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/term51[32]              |     50 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/valid_p4                |     48 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/final_sum_reg[55]       |     48 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/final_sum_reg[55]       |     48 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/valid_p4                |     48 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/term2[52]               |     43 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/term2[52]               |     43 | FDRE        |
+| u_impl/q_boundary_reg_gate_n_0                               |     42 | LUT2        |
+| u_impl/i_boundary_reg_gate_n_0                               |     42 | LUT2        |
+| u_impl/valid_to_mag                                          |     37 | FDRE        |
+| u_impl/u_nco/rom_addr[3]                                     |     34 | LUT5        |
+| u_impl/u_nco/rom_addr[5]                                     |     34 | LUT5        |
+| u_impl/u_nco/rom_addr[4]                                     |     34 | LUT5        |
+| u_impl/u_nco/rom_addr[2]                                     |     33 | LUT5        |
+| u_impl/u_nco/rom_addr[6]                                     |     32 | LUT5        |
+| sample_in_IBUF[15]                                           |     30 | IBUF        |
+| u_impl/u_nco/rom_addr[7]                                     |     30 | LUT5        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/term21[32]              |     29 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/term21[32]              |     29 | FDRE        |
+| sample_valid_IBUF                                            |     27 | IBUF        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/delay_line_reg[3]_6[31] |     24 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/delay_line_reg[3]_2[31] |     24 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_q/sum67[53]               |     23 | FDRE        |
+| u_impl/gen_fir_outreg_fanout.u_fir_i/sum67[53]               |     23 | FDRE        |
++--------------------------------------------------------------+--------+-------------+
+
+

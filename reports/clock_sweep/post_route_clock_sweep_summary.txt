@@ -1,0 +1,156 @@
+Post-route clock sweep derived from routed 100 MHz timing
+Generated from: C:/Users/CHOUDN3/Downloads/VLSI_project
+
+baseline
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/baseline_impl/lockin_baseline_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: -11.142 ns
+  derived min period: 21.142 ns
+  derived Fmax: 47.299 MHz
+  startpoint: sample_count_reg[3]_replica/C
+  endpoint: u_mag/q_square__1/A[24]
+
+pipelined
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_impl/lockin_pipelined_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 0.692 ns
+  derived min period: 9.308 ns
+  derived Fmax: 107.434 MHz
+  startpoint: u_fir_i/sum4567_reg[0]/C
+  endpoint: u_mag/i_square0__0/B[12]
+
+pipelined_plus1
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus1_impl/lockin_pipelined_plus1_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 1.418 ns
+  derived min period: 8.582 ns
+  derived Fmax: 116.523 MHz
+  startpoint: u_impl/u_fir_q/sum4567_reg[1]/C
+  endpoint: u_impl/u_fir_q/sample_out_reg[44]/D
+
+pipelined_plus5
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_impl/lockin_pipelined_plus5_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 1.854 ns
+  derived min period: 8.146 ns
+  derived Fmax: 122.760 MHz
+  startpoint: u_impl/u_accumulator/bin_energy_reg[2]/C
+  endpoint: u_impl/u_tracker/best_energy_reg[2]_lopt_replica/CE
+
+pipelined_plus5_tracker
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_tracker_impl/lockin_pipelined_plus5_tracker_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 1.676 ns
+  derived min period: 8.324 ns
+  derived Fmax: 120.135 MHz
+  startpoint: u_impl/u_fir_i/sum0123_reg[0]/C
+  endpoint: u_impl/u_fir_i/sample_out_reg[47]/D
+
+pipelined_plus5_firout
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_impl/lockin_pipelined_plus5_firout_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 2.002 ns
+  derived min period: 7.998 ns
+  derived Fmax: 125.031 MHz
+  startpoint: u_impl/u_accumulator/bin_energy_reg[16]/C
+  endpoint: u_impl/gen_regular_tracker.u_tracker/best_energy_reg[112]_lopt_replica/CE
+
+pipelined_plus5_firout_tracker
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_tracker_impl/lockin_pipelined_plus5_firout_tracker_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 1.675 ns
+  derived min period: 8.325 ns
+  derived Fmax: 120.120 MHz
+  startpoint: u_impl/u_mag/valid_out_reg/C
+  endpoint: u_impl/u_accumulator/running_energy_reg[124]/R
+
+pipelined_plus5_firout_accbuf
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_impl/lockin_pipelined_plus5_firout_accbuf_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 2.254 ns
+  derived min period: 7.746 ns
+  derived Fmax: 129.099 MHz
+  startpoint: u_impl/u_mag/q_square0/CLK
+  endpoint: u_impl/u_mag/q_square_reg[5]/D
+
+pipelined_plus5_firout_accbuf_magpipe
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_magpipe_impl/lockin_pipelined_plus5_firout_accbuf_magpipe_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 2.156 ns
+  derived min period: 7.844 ns
+  derived Fmax: 127.486 MHz
+  startpoint: u_impl/bin_energy_buf_reg[0]/C
+  endpoint: u_impl/gen_regular_tracker.u_tracker/best_energy_reg[0]_lopt_replica/CE
+
+pipelined_plus5_firout_accbuf_trackercmp
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_trackercmp_impl/lockin_pipelined_plus5_firout_accbuf_trackercmp_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 1.872 ns
+  derived min period: 8.128 ns
+  derived Fmax: 123.031 MHz
+  startpoint: u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  endpoint: u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[47]/D
+
+pipelined_plus5_firout_accbuf_fanout
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_fanout_impl/lockin_pipelined_plus5_firout_accbuf_fanout_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 2.136 ns
+  derived min period: 7.864 ns
+  derived Fmax: 127.162 MHz
+  startpoint: u_impl/gen_regular_mag_fanout.u_mag/i_square0/CLK
+  endpoint: u_impl/gen_regular_mag_fanout.u_mag/i_square_reg[1]/D
+
+pipelined_plus5_firout_accbuf_energy64
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_energy64_impl/lockin_pipelined_plus5_firout_accbuf_energy64_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 2.548 ns
+  derived min period: 7.452 ns
+  derived Fmax: 134.192 MHz
+  startpoint: u_impl/gen_narrow_mag.u_mag/q_square0__3/CLK
+  endpoint: u_impl/gen_narrow_mag.u_mag/q_square_reg__0/PCIN[0]
+
+pipelined_plus5_firout_accbuf_energy62
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/pipelined_plus5_firout_accbuf_energy62_impl/lockin_pipelined_plus5_firout_accbuf_energy62_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 2.549 ns
+  derived min period: 7.451 ns
+  derived Fmax: 134.210 MHz
+  startpoint: u_impl/gen_narrow_mag.u_mag/q_square0__3/CLK
+  endpoint: u_impl/gen_narrow_mag.u_mag/q_square_reg__0/PCIN[0]
+
+pipelined_plus5_firout_accbuf_energy62_fir29
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_impl/e62_fir29_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 2.994 ns
+  derived min period: 7.006 ns
+  derived Fmax: 142.735 MHz
+  startpoint: u_impl/gen_fir_outreg.u_fir_q/final_sum_reg_reg[0]/C
+  endpoint: u_impl/gen_fir_outreg.u_fir_q/sample_out_reg[28]/D
+
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_impl/e62_fir29_fr_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 3.885 ns
+  derived min period: 6.115 ns
+  derived Fmax: 163.532 MHz
+  startpoint: u_impl/gen_narrow_mag.u_mag/valid_out_reg/C
+  endpoint: u_impl/u_accumulator/running_energy_reg[60]/R
+
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_accstart_impl/e62_fir29_fr_accstart_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 1.465 ns
+  derived min period: 8.535 ns
+  derived Fmax: 117.165 MHz
+  startpoint: u_impl/gen_fir_outreg_fast_round.u_fir_q/valid_p1_reg/C
+  endpoint: u_impl/gen_fir_outreg_fast_round.u_fir_i/sum67_reg[1]/CE
+
+pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart
+  routed checkpoint: C:/Users/CHOUDN3/Downloads/VLSI_project/reports/e62_fir29_fr_ao_accstart_impl/e62_fir29_fr_ao_accstart_routed.dcp
+  base clock period: 10.000 ns
+  base WNS: 4.091 ns
+  derived min period: 5.909 ns
+  derived Fmax: 169.233 MHz
+  startpoint: u_impl/gen_narrow_mag.u_mag/i_square_reg__0/CLK
+  endpoint: u_impl/gen_narrow_mag.u_mag/mag_sq_reg[57]/D
+

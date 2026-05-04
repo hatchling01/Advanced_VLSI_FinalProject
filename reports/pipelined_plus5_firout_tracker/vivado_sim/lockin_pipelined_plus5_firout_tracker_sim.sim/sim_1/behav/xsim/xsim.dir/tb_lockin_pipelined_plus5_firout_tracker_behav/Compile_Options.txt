@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "uvm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_lockin_pipelined_plus5_firout_tracker_behav" "xil_defaultlib.tb_lockin_pipelined_plus5_firout_tracker" "xil_defaultlib.glbl" -log "elaborate.log" 

@@ -1,0 +1,7 @@
+Time resolution is 1 ps
+Expected bin: 3
+Detected bin: 3
+Best energy:  2926974856033640715
+Latency after final sample: 12 cycles
+PASS
+$finish called at time : 5285 ns : File "C:/Users/CHOUDN3/Downloads/VLSI_project/tb/tb_lockin_pipelined_plus1.sv" Line 136

@@ -1,0 +1,26 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef" \
+"../../../../../../../rtl/bin_accumulator.sv" \
+"../../../../../../../rtl/fir_filter_pipelined.sv" \
+"../../../../../../../rtl/fir_filter_pipelined_outreg.sv" \
+"../../../../../../../rtl/fir_filter_pipelined_outreg_fanout.sv" \
+"../../../../../../../rtl/fir_filter_pipelined_outreg_fast_round.sv" \
+"../../../../../../../rtl/iq_mixer.sv" \
+"../../../../../../../rtl/lockin_pipelined_boundary_top.sv" \
+"../../../../../../../rtl/lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround_top.sv" \
+"../../../../../../../rtl/magnitude_sq_chunked_pipeline.sv" \
+"../../../../../../../rtl/magnitude_sq_narrow_pipelined.sv" \
+"../../../../../../../rtl/magnitude_sq_pipelined.sv" \
+"../../../../../../../rtl/magnitude_sq_pipelined_fanout.sv" \
+"../../../../../../../rtl/nco.sv" \
+"../../../../../../../rtl/resonance_tracker.sv" \
+"../../../../../../../rtl/resonance_tracker_compare_pipeline.sv" \
+"../../../../../../../rtl/resonance_tracker_fanout.sv" \
+"../../../../../../../rtl/resonance_tracker_pipelined.sv" \
+"../../../../../../../tb/tb_lockin_pipelined_plus5_firout_accbuf_energy62_fir29_fastround.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,13 @@
+0.7
+2020.2
+Nov 14 2025
+19:37:27
+C:/Users/CHOUDN3/Downloads/VLSI_project/reports/baseline/vivado_sim/lockin_baseline_sim.sim/sim_1/behav/xsim/glbl.v,1756381829,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/bin_accumulator.sv,1777832430,systemVerilog,,C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter.sv,,bin_accumulator,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/fir_filter.sv,1777832538,systemVerilog,,C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/iq_mixer.sv,,fir_filter,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/iq_mixer.sv,1777832430,systemVerilog,,C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_baseline_top.sv,,iq_mixer,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/lockin_baseline_top.sv,1777832469,systemVerilog,,C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq.sv,,lockin_baseline_top,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/magnitude_sq.sv,1777832430,systemVerilog,,C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv,,magnitude_sq,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/nco.sv,1777832430,systemVerilog,,C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker.sv,,nco,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/rtl/resonance_tracker.sv,1777832430,systemVerilog,,C:/Users/CHOUDN3/Downloads/VLSI_project/tb/tb_lockin_baseline.sv,,resonance_tracker,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/CHOUDN3/Downloads/VLSI_project/tb/tb_lockin_baseline.sv,1777834579,systemVerilog,,,,tb_lockin_baseline,,uvm,../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,

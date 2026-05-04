@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef" \
+"../../../../../../../rtl/bin_accumulator.sv" \
+"../../../../../../../rtl/fir_filter_pipelined.sv" \
+"../../../../../../../rtl/iq_mixer.sv" \
+"../../../../../../../rtl/lockin_pipelined_boundary_top.sv" \
+"../../../../../../../rtl/lockin_pipelined_plus5_top.sv" \
+"../../../../../../../rtl/magnitude_sq_pipelined.sv" \
+"../../../../../../../rtl/nco.sv" \
+"../../../../../../../rtl/resonance_tracker.sv" \
+"../../../../../../../tb/tb_lockin_pipelined_plus5.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
