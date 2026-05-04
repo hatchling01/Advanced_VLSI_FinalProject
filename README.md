@@ -23,6 +23,21 @@ real-time resonance tracking.
 - `reports/` - synthesis, timing, utilization, and simulation outputs
 - `docs/` - report notes and project documentation
 
+## Running From a Fresh Clone
+
+Clone the repository and run all commands from the repository root:
+
+```powershell
+git clone https://github.com/hatchling01/Advanced_VLSI_FinalProject.git
+cd Advanced_VLSI_FinalProject
+```
+
+Requirements:
+
+- Python 3 for the golden model and plot generation
+- AMD/Xilinx Vivado available as `vivado` on your shell path, or run the same
+  commands from a Vivado Tcl shell
+
 ## Full Reports
 
 The README is a compact landing page. The complete design-decision narrative,
@@ -254,10 +269,9 @@ Generated files include:
 
 ## Run Baseline RTL Simulation
 
-From the Vivado Tcl shell, run:
+From the repository root, run:
 
-```tcl
-cd C:/Users/CHOUDN3/Downloads/VLSI_project
+```powershell
 vivado -mode batch -source vivado/sim_baseline.tcl
 ```
 
@@ -271,8 +285,7 @@ PASS
 
 ## Run Baseline Synthesis
 
-```tcl
-cd C:/Users/CHOUDN3/Downloads/VLSI_project
+```powershell
 vivado -mode batch -source vivado/synth_baseline.tcl
 ```
 
@@ -280,8 +293,7 @@ The reports are written to `reports/baseline/`.
 
 ## Run Pipelined RTL Simulation
 
-```tcl
-cd C:/Users/CHOUDN3/Downloads/VLSI_project
+```powershell
 vivado -mode batch -source vivado/sim_pipelined.tcl
 ```
 
@@ -295,8 +307,7 @@ PASS
 
 ## Run Pipelined Synthesis
 
-```tcl
-cd C:/Users/CHOUDN3/Downloads/VLSI_project
+```powershell
 vivado -mode batch -source vivado/synth_pipelined.tcl
 ```
 
@@ -330,8 +341,7 @@ removes that FIR valid/CE fanout by using an always-on fast-round FIR datapath
 plus accumulator start-load, and is the current highest-Fmax datapoint for the
 current continuous-valid vectors.
 
-```tcl
-cd C:/Users/CHOUDN3/Downloads/VLSI_project
+```powershell
 vivado -mode batch -source vivado/sim_pipelined_plus1.tcl
 vivado -mode batch -source vivado/synth_pipelined_plus1.tcl
 vivado -mode batch -source vivado/impl_pipelined_plus1.tcl
@@ -418,8 +428,7 @@ magnitude-square carry chain.
 The implementation scripts use Artix-7 `xc7a35tfgg484-1` so the wide
 debug-style top-level output bus has enough package I/O for place-and-route.
 
-```tcl
-cd C:/Users/CHOUDN3/Downloads/VLSI_project
+```powershell
 vivado -mode batch -source vivado/impl_baseline.tcl
 vivado -mode batch -source vivado/impl_pipelined.tcl
 ```
@@ -433,8 +442,7 @@ The reports are written to:
 
 After implementation checkpoints exist, run:
 
-```tcl
-cd C:/Users/CHOUDN3/Downloads/VLSI_project
+```powershell
 vivado -mode batch -source vivado/sweep_post_route_timing.tcl
 ```
 
