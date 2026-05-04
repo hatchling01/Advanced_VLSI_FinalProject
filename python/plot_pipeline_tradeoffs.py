@@ -57,6 +57,32 @@ LABELS = {
 }
 
 
+LATENCY_HIGHLIGHTS = {
+    "pipelined",
+    "pipelined_plus1",
+    "pipelined_plus5",
+    "pipelined_plus5_firout_accbuf",
+    "pipelined_plus5_firout_accbuf_energy64",
+    "pipelined_plus5_firout_accbuf_energy62_fir29",
+    "pipelined_plus5_firout_accbuf_energy62_fir29_fastround",
+    "pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart",
+    "pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart",
+}
+
+
+LATENCY_LABEL_OFFSETS = {
+    "pipelined": (0, -18),
+    "pipelined_plus1": (0, -18),
+    "pipelined_plus5": (-42, -24),
+    "pipelined_plus5_firout_accbuf": (48, 28),
+    "pipelined_plus5_firout_accbuf_energy64": (-76, 22),
+    "pipelined_plus5_firout_accbuf_energy62_fir29": (-82, -22),
+    "pipelined_plus5_firout_accbuf_energy62_fir29_fastround": (86, 10),
+    "pipelined_plus5_firout_accbuf_energy62_fir29_fastround_accstart": (96, 36),
+    "pipelined_plus5_firout_accbuf_energy62_fir29_fastround_alwayson_accstart": (88, -18),
+}
+
+
 def read_rows():
     with CSV_PATH.open(newline="", encoding="utf-8") as csv_file:
         return list(csv.DictReader(csv_file))
@@ -101,13 +127,25 @@ def chart_bounds(values, padding_ratio=0.1, include_zero=True):
     return min_value - span * padding_ratio, max_value + span * padding_ratio
 
 
-def line_chart(path, title, rows, x_key, y_key, x_label, y_label, include_zero=False):
-    width = 940
-    height = 560
+def line_chart(
+    path,
+    title,
+    rows,
+    x_key,
+    y_key,
+    x_label,
+    y_label,
+    include_zero=False,
+    label_designs=None,
+    label_offsets=None,
+    subtitle=None,
+):
+    width = 1120 if label_designs else 940
+    height = 600 if label_designs else 560
     left = 90
-    right = 40
+    right = 130 if label_designs else 40
     top = 75
-    bottom = 90
+    bottom = 105 if label_designs else 90
     plot_w = width - left - right
     plot_h = height - top - bottom
 
@@ -132,6 +170,8 @@ def line_chart(path, title, rows, x_key, y_key, x_label, y_label, include_zero=F
         f'<line x1="{left}" y1="{top + plot_h}" x2="{left + plot_w}" y2="{top + plot_h}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>',
         f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_h}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>',
     ]
+    if subtitle:
+        body.append(svg_text(width / 2, 58, subtitle, 13, weight="400", fill="#4b5563"))
 
     for idx in range(6):
         value = y_min + (y_max - y_min) * idx / 5
@@ -158,8 +198,38 @@ def line_chart(path, title, rows, x_key, y_key, x_label, y_label, include_zero=F
         x = sx(x_value)
         y = sy(y_value)
         color = COLORS.get(design, COLORS["accent"])
-        body.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="7" fill="{color}" stroke="#ffffff" stroke-width="2"/>')
-        body.append(svg_text(x, y - 14, f'{LABELS[design]} ({y_value:.1f})', 12, weight="700"))
+        radius = 7 if label_designs is None or design in label_designs else 4
+        opacity = "1" if label_designs is None or design in label_designs else "0.45"
+        body.append(
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius}" fill="{color}" '
+            f'stroke="#ffffff" stroke-width="2" opacity="{opacity}"/>'
+        )
+        if label_designs is not None and design not in label_designs:
+            continue
+
+        dx, dy = (0, -14)
+        if label_offsets and design in label_offsets:
+            dx, dy = label_offsets[design]
+        label_x = x + dx
+        label_y = y + dy
+        anchor = "start" if dx > 0 else "end" if dx < 0 else "middle"
+        label = f'{LABELS[design]} ({y_value:.1f})'
+        if dx or dy:
+            body.append(
+                f'<line x1="{x:.1f}" y1="{y:.1f}" x2="{label_x:.1f}" y2="{label_y - 5:.1f}" '
+                f'stroke="{color}" stroke-width="1" opacity="0.55"/>'
+            )
+        text_width = max(42, len(label) * 6.4)
+        rect_x = label_x - text_width / 2
+        if anchor == "start":
+            rect_x = label_x - 4
+        elif anchor == "end":
+            rect_x = label_x - text_width + 4
+        body.append(
+            f'<rect x="{rect_x:.1f}" y="{label_y - 15:.1f}" width="{text_width:.1f}" '
+            f'height="19" rx="3" fill="#ffffff" opacity="0.86"/>'
+        )
+        body.append(svg_text(label_x, label_y, label, 12, anchor=anchor, weight="700"))
 
     write_svg(path, width, height, body)
 
@@ -337,6 +407,9 @@ def main():
         "Latency after final sample (cycles)",
         "Derived post-route Fmax (MHz)",
         include_zero=False,
+        label_designs=LATENCY_HIGHLIGHTS,
+        label_offsets=LATENCY_LABEL_OFFSETS,
+        subtitle="All variants are plotted; only major decision points are labeled for readability.",
     )
 
     line_chart(

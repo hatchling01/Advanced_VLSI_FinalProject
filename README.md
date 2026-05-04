@@ -218,7 +218,10 @@ accumulator iteration or control logic.
 
 The generated plots are committed under `reports/plots/`.
 
-![Fmax vs latency](reports/plots/pipeline_fmax_vs_latency.svg)
+The Fmax-vs-latency plot shows every implemented variant, but only labels the
+major decision points so the 17-cycle design cluster remains readable.
+
+![Clean Fmax vs latency plot](reports/plots/pipeline_fmax_vs_latency.svg)
 
 ![Incremental Fmax gain](reports/plots/pipeline_incremental_fmax_gain.svg)
 
